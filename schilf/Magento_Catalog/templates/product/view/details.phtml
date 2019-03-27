@@ -1,0 +1,21 @@
+<?php
+use \Magento\ConfigurableProduct\Model\Product\Type\Configurable;
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var $block Magento\Catalog\Block\Product\View
+ */
+$product = $block->getProduct();
+?>
+
+<?php if($product->getTypeId() == Configurable::TYPE_CODE): ?>
+  <?= $block->getChildHtml('product.details.configurable') ?>
+<?php else: ?>
+  <?= $block->getChildHtml('product.details.simple') ?>
+<?php endif; ?>

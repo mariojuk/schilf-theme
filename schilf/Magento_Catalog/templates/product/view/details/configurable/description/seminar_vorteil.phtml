@@ -1,0 +1,18 @@
+<?php
+/**
+ * @var $block Magento\Framework\View\Element\Template
+ * @var $product \Magento\Catalog\Model\Product
+ */
+?>
+
+<?php
+$product = $block->getProduct();
+
+$_code = 'schilf_seminarvorteile';
+?>
+<?php if($product && $product->getData($_code)): ?>
+  <div class="seminar_vorteil">
+      <p>Ihr Nutzen</p>
+      <?= $product->getData($_code) ?></div>
+<?php endif; ?>
+

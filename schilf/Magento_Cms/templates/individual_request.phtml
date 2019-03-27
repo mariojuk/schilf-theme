@@ -1,0 +1,247 @@
+<?php
+
+/**
+ * @var $block \Schilf\Products\Block\Cms\Questions
+ */
+?>
+
+
+<div class="individual-request">
+    <div class="request-steps">
+        <h1>Ihre unverbindliche Anfrage</h1>
+        <h3>So kommen wir zusammen</h3>
+        <p class="subtitle">Nur noch 3 Schritte bis zu Ihrer individuellen Fortbildung!</p>
+        <div id="contact-steps">
+            <div class="step" data-role="collapsible">
+                <div class="steps-title" data-role="trigger">
+                    <span>Schritt 1 – Der erste Kontakt</span>
+                </div>
+            </div>
+            <div class="steps-content" data-role="content">
+                Sie melden sich bei uns und teilen uns mit, zu welchem Thema Sie und Ihr Kollegium sich eine Fortbildung wünschen.
+                Mit diesem unverbindlichen Formular können Sie uns bequem Ihre Angaben zum gewünschten Thema, Termin und voraussichtlicher Teilnehmerzahl über­mitteln.
+            </div>
+            <div class="step" data-role="collapsible">
+                <div class="steps-title" data-role="trigger">
+                    <span>Schritt 2 – Die individuelle Abstimmung</span>
+                </div>
+            </div>
+            <div class="steps-content" data-role="content">Content 2</div>
+            <div class="step" data-role="collapsible">
+                <div class="steps-title" data-role="trigger">
+                    <span>Schritt 3 – Unser Angebot</span>
+                </div>
+            </div>
+            <div class="steps-content" data-role="content">Content 3</div>
+        </div>
+    </div>
+
+    <div class="request-form main-content">
+        <div class="main-half">
+            <form action="<?= $block->getFormUrl() ?>" data-mage-init='{"validation":{}}' method="post">
+                <p class="subtitle">Anfrageformular</p>
+                <fieldset>
+                    <div class="field onethird">
+                        <label class="label" for="gender">
+                            <span><?= $block->escapeHtml(__('Gender')) ?></span>
+                        </label>
+                        <div class="control">
+                            <select id="gender">
+                                <option value="option1" selected="selected"><?php echo __('Sir') ?></option>
+                                <option value="option2"><?php echo __('Mrs') ?></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field required half-width">
+                        <label class="label" for="firstname">
+                            <span><?= $block->escapeHtml(__('Name')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="firstname" name="firstname" class="input-text"
+                                   data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="field required half-width">
+                        <label class="label" for="lastname">
+                            <span><?= $block->escapeHtml(__('Last name')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="lastname" name="lastname" class="input-text" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="position">
+                            <span>Position</span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="position" name="position" class="input-text">
+                        </div>
+                    </div>
+                    <div class="field half-width">
+                        <label class="label" for="phone">
+                            <span><?= $block->escapeHtml(__('Telephone')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="phone" name="telephone" class="input-text">
+                        </div>
+                    </div>
+                    <div class="field half-width">
+                        <label class="label" for="fax">
+                            <span><?= $block->escapeHtml(__('Telefax')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="telefax" name="telefax" class="input-text">
+                        </div>
+                    </div>
+                    <div class="field required">
+                        <label class="label" for="email">
+                            <span><?= $block->escapeHtml(__('Email')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="email" id="email" name="email" class="input-text" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="field type-selector">
+                        <label class="label">
+                            <input id="type-selector-private" type="radio" name="addresstype" value="Privat Addresse" title="Privateaddress" class="input-text" checked="">
+                            <?= $block->escapeHtml(__('This is my private address')) ?>
+                            </label>
+                        <br>
+                        <label class="label">
+                            <input id="type-selector-school" type="radio" name="addresstype" value="Schule Addresse" title="Schooladdress" class="input-text">
+                            <?= $block->escapeHtml(__('This is my school or institutional address')) ?>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="school-name">
+                            <span><?= $block->escapeHtml(__('School Name')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="school-name" name="school-name" class="input-text">
+                        </div>
+                    </div>
+                    <div class="field half-width">
+                        <label class="label" for="address">
+                            <span><?= $block->escapeHtml(__('Street and House number')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="address" name="address" class="input-text">
+                        </div>
+                    </div>
+                    <div class="field half-width">
+                        <label class="label" for="school-board">
+                            <span><?= $block->escapeHtml(__('School board')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="school-board" name="school-board" class="input-text">
+                        </div>
+                    </div>
+                    <div class="field onethird">
+                        <label class="label" for="post-code">
+                            <span><?= $block->escapeHtml(__('Post Code')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="post-code" name="post-code" class="input-text">
+                        </div>
+                    </div>
+                    <div class="field twothird">
+                        <label class="label" for="place">
+                            <span><?= $block->escapeHtml(__('Place')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="place" name="place" class="input-text">
+                        </div>
+                    </div>
+                    <div class="field required">
+                        <label class="label" for="topic">
+                            <span><?= $block->escapeHtml(__('Choose topic')) ?></span>
+                        </label>
+                        <div class="control">
+                            <select id="topic" name="topic" data-validate="{required:true}">
+                                <option value="option1" selected="selected"><?php echo __('Option 1') ?></option>
+                                <option value="option2"><?php echo __('Option 2') ?></option>
+                                <option value="option3"><?php echo __('Option 3') ?></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field required">
+                        <label class="label" for="training">
+                            <span><?= $block->escapeHtml(__('Your advanced training - Please choose!')) ?></span>
+                        </label>
+                        <div class="control">
+                            <select id="training" name="training">
+                                <option value="option1" selected="selected"><?php echo __('Option 1') ?></option>
+                                <option value="option2"><?php echo __('Option 2') ?></option>
+                                <option value="option3"><?php echo __('Option 3') ?></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="special-requirements">
+                            <span><?= $block->escapeHtml(__('Do you have special requirements?')) ?></span>
+                        </label>
+                        <div class="control">
+                            <textarea id="special-requirements" name="special-requirements"></textarea>
+                        </div>
+                    </div>
+                    <div class="field half-width">
+                        <label class="label" for="date">
+                            <span><?= $block->escapeHtml(__('Your desired date for the training')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="date" id="date" name="date" class="input-text" >
+                        </div>
+                    </div>
+                    <div class="field half-width">
+                        <label class="label" for="number-of-participants">
+                            <span><?= $block->escapeHtml(__('Expected number of participants')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="number" id="number-of-participants" name="number-of-participants" class="input-text">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="available-for-questions">
+                            <span><?= $block->escapeHtml(__('When and how are you best reached for questions?')) ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="available-for-questions" name="available-for-questions" class="input-text">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="submit" class="action submit primary" title="<?= $block->escapeHtmlAttr(__('Send an inquiry')) ?>"><span><?= $block->escapeHtml(__('Send an inquiry')) ?></span></button>
+                    </div>
+                </div>
+              <?= $block->getBlockHtml('formkey') ?>
+            </form>
+        </div>
+        <div class="main-half">
+            <p class="subtitle mobile-subtitle">Sie möchten uns Ihre Anfrage per Fax zusenden?</p>
+            <p>Dann können Sie es sich hier herunter laden. Das ausgefüllte Formular senden Sie bitte an: +49 (0) 821.5 99 77 99-5.</p>
+            <br>
+            <p>Natürlich können Sie sich auch per E-Mail an</p>
+            <br>
+            <p><a href="mailto:info@schilf-akademie.de">info@schilf-akademie.de</a></p>
+            <br>
+            <p>oder telefonisch unter +49 (0) 821.5 99 77 99-8 an uns wenden.</p>
+
+            <!--
+                PDF should be changed,
+                currently from live site
+             -->
+            <a class="download-formular" href="https://www.schilf-akademie.de/fileadmin/user_upload/Anfrageformular-SchiLf-Akademie.pdf" onclick="ga('send', 'event', 'Download', 'click', 'https://www.schilf-akademie.de/fileadmin/user_upload/Anfrageformular-SchiLf-Akademie.pdf');">
+                <img src="<?php echo $this->getViewFileUrl("images/download_formular.png"); ?>" alt="" width="170" height="245">
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'accordion'], function ($) {
+        $("#contact-steps").accordion({"collapsible": true, "animate": 400, "openedState": "active"});
+    });
+</script>

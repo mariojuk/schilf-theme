@@ -1,0 +1,207 @@
+<?php
+/**
+ * @var $block \Schilf\Products\Block\Product\Configurable\Formular
+ */
+?>
+<div id="formular-modal">
+    <div class="modal-form">
+        <h2>Ihre unverbindliche Anfrage</h2>
+        <p>So kommen wir zusammen: Nur wenige Schritte zu Ihrer individuellen Fortbildung</p>
+
+        <div class="steps-wrapper">
+            <div class="step">
+                <span class="step-number">1.</span>
+                <span>Teilen Sie uns Ihre Wünsche bitte so exakt wie möglich mit.</span>
+            </div>
+            <div class="step">
+                <span class="step-number">2.</span>
+                <span>Basierend auf Ihren Angaben vermitteln wir einen geeigneten Referenten, der sich zwecks inhaltlicher und terminlicher Abstimmung mit Ihnen in Verbindung setzt.</span>
+            </div>
+            <div class="step">
+                <span class="step-number">3.</span>
+                <span>Wurden alle Fragen geklärt? Dann erstellen wir Ihnen gerne Ihr individuelles Angebot.</span>
+            </div>
+        </div>
+        <h2>Ihr Anfrageformular zu Ihrem individuellen Vortrag</h2>
+        <div class="main-content">
+            <div class="main-with-sidebar">
+                <form id="product_formular" action="<?= $block->getFormUrl() ?>" data-mage-init='{"validation":{}}'>
+                    <fieldset>
+                        <div class="field required">
+                            <label class="label" for="gender">
+                                <span><?= $block->escapeHtml(__('Gender')) ?></span>
+                            </label>
+                            <div class="control">
+                                <select id="gender"  data-validate="{required:true}">
+                                    <option value="0" selected="selected"><?php echo __('Please choose') ?></option>
+                                    <option value="option2"><?php echo __('Sir') ?></option>
+                                    <option value="option3"><?php echo __('Mrs') ?></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field required">
+                            <label class="label" for="firstname">
+                                <span><?= $block->escapeHtml(__('Name')) ?></span>
+                            </label>
+                            <div class="control">
+                                <input type="text" name="firstname" id="firstname" class="input-text" data-validate="{required:true}">
+                            </div>
+                        </div>
+                        <div class="field required">
+                            <label class="label" for="lastname">
+                                <span><?= $block->escapeHtml(__('Last name')) ?></span>
+                            </label>
+                            <div class="control">
+                                <input type="text" id="lastname" name="lastname" class="input-text" data-validate="{required:true}">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="phone">
+                                <span><?= $block->escapeHtml(__('Telephone')) ?></span>
+                            </label>
+                            <div class="control">
+                                <input type="text" id="telephone" name="telephone" class="input-text">
+                            </div>
+                        </div>
+                        <div class="field required">
+                            <label class="label" for="email">
+                                <span><?= $block->escapeHtml(__('Email')) ?></span>
+                            </label>
+                            <div class="control">
+                                <input type="email" id="email"  name="email" class="input-text"
+                                       data-validate="{required:true, email:true}">
+                            </div>
+                        </div>
+                        <div class="field required">
+                            <label class="label" for="email">
+                                <span><?= $block->escapeHtml(__('Title of the topic')) ?></span>
+                            </label>
+                            <div class="control">
+                                <select id="topic" data-validate="{required:true}" name="topic">
+                                    <option value="option1" selected="selected">Mit digitalen Medien Lernprozesse im Unterricht unterstützen</option>
+                                    <option value="option2"><?php echo __('Option 2') ?></option>
+                                    <option value="option3"><?php echo __('Option 3') ?></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field required">
+                            <label class="label" for="inquiry_text">
+                                <span><?= $block->escapeHtml(__('Wann sind Sie am besten für Rückfragen erreichbar?')) ?></span>
+                            </label>
+                            <div class="control">
+                                <textarea id="inquiry_text" name="inquiry_text" data-validate="{required:true}"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="actions-toolbar">
+                        <div class="primary">
+                            <button type="submit" class="action submit primary" title="<?= $block->escapeHtmlAttr(__('Send an inquiry')) ?>"><span><?= $block->escapeHtml(__('Send an inquiry')) ?></span></button>
+                        </div>
+                    </div>
+                  <?= $block->getBlockHtml('formkey') ?>
+                </form>
+            </div>
+
+            <div class="sidebar sidebar-right">
+                <h3 class="sidebar-title">Mit uns haben Sie einen kompetenten Partner
+                    an Ihrer Seite</h3>
+                <ul>
+                    <li><i class="fa fa-check"></i><strong>Hand in Hand:</strong> Sie stellen uns Ihre Anfrage, wir planen Ihre Fortbildung nach Ihren Wünschen.</li>
+                    <li><i class="fa fa-check"></i><strong>Maßgeschneiderte Lösungen:</strong> Alle Fortbildungsinhalte können Sie direkt in Ihrem Arbeitsalltag einsetzen..</li>
+                    <li><i class="fa fa-check"></i><strong>Ihr Kollegium im Fokus:</strong> Unsere Referenten sind allesamt Praktiker, die Ihren Arbeitsalltag kennen und verstehen.</li>
+                    <li><i class="fa fa-check"></i><strong>Fortbildungskonzepte mit Nachhaltigkeit:</strong> Auch nach der Fortbildung können Sie an Ihrem Konzept weiterarbeiten. Wir begleiten Sie dabei!</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p>Es gelten unsere AGB . Geben Sie in nicht als Pflichtfeld gekennzeichnete Felder Daten ein,
+            so erteilen Sie uns mit Klick auf „Absenden“ Ihre Einwilligung in die Verarbeitung dieser Daten.
+            Weitere Informationen finden Sie in unserer Datenschutzerklärung.
+        </p>
+
+    </div>
+
+    <div class="modal-success" style="display: none;">
+        <img src="<?php echo $this->getViewFileUrl("images/logo.png"); ?>" alt="logo" width="190">
+        <h2>Die Anfrage wurde erhalten</h2>
+        <p>Vielen Dank für Ihre Anfrage an die SchiLf Akademie! Gerne setzten wir uns schnellstmöglich mit Ihnen in Verbindung!</p>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <a href="<?= $block->getBaseUrl()?>" class="action back primary" title="<?= $block->escapeHtmlAttr(__('Back to Homepage')) ?>">
+                    <span><?= $block->escapeHtml(__('Back to Homepage')) ?></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    require(
+        [
+          'jquery',
+          'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                modalClass: 'formular-modal-wrapper'
+            };
+
+
+            var $form = $('#product_formular');
+            var $popup  = $('#formular-modal');
+
+            modal(options, $popup);
+
+            $(".show-modal").click(function() {
+              $(".modal-form").show();
+              $(".modal-success").hide();
+              $popup.modal('openModal');
+            });
+
+
+            $form.submit(function( event ) {
+              event.preventDefault();
+
+              if ($form.validate().form()) {
+                $popup.addClass('inprogress'); // show loading screen
+
+                var formData = {
+                  'firstname'    : $form.find('input[name=firstname]').val(),
+                  'lastname'     : $form.find('input[name=lastname]').val(),
+                  'email'        : $form.find('input[name=email]').val(),
+                  'telephone'    : $form.find('input[name=telephone]').val(),
+                  'topic'        : $form.find('select[name=topic]').val(),
+                  'phone'        : $form.find('input[name=phone]').val(),
+                  'inquiry_text' : $form.find('textarea[name=inquiry_text]').val(),
+                  'form_key'     : $form.find('input[name=form_key]').val(),
+                };
+
+                $.ajax({
+                  url: $form.attr('action'),
+                  type: 'post',
+                  data: formData
+                })
+                  .success(function (response, e, c) {
+                    if (response.success) {
+                      $(".modal-form").hide();
+                      $(".modal-success").show();
+                    }
+                  })
+                  .fail(function () {
+                    alert('an error occurred while submitting your form');
+                  })
+                  .always(function () {
+                    $popup.removeClass('inprogress');
+                  });
+                }
+            });
+        }
+    );
+</script>

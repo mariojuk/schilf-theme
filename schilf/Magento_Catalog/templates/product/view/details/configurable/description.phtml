@@ -1,0 +1,23 @@
+<?php
+/**
+ * @var $block Magento\Framework\View\Element\Template
+ * @var $product \Magento\Catalog\Model\Product
+ */
+$product = $this->getSimpleProduct();
+$_code = 'description';
+
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+
+$_attributeValue = $_helper->productAttribute($product, $product->getDescription(), 'description') ?: '';
+?>
+<?php if($_attributeValue): ?>
+  <div class="description">
+    <?php if($block->getTitle()): ?>
+    <h2><?= $block->getTitle() ?></h2>
+    <?php endif; ?>
+      <?= $_attributeValue ?>
+      <?php $block->getChildBlock('schilf_seminarvorteile')->setProduct($product)  ?>
+      <?= $block->getChildHtml() ?>
+  </div>
+<?php endif; ?>
+

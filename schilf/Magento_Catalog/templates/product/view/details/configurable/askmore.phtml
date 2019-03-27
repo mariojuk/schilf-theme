@@ -1,0 +1,23 @@
+<?php
+/**
+ * @var $block Magento\Catalog\Block\Product\View
+ * @var $product \Magento\Catalog\Model\Product
+ */
+$product = $this->getSimpleProduct();
+?>
+<?php if($product && !$product->isSaleable()): ?>
+  <div class="seminar_price_container">
+    <div class="seminar_price">
+      <span><?= __('Seminarpreis') ?></span>
+      <span><?= $block->getProductPrice($product) ?></span>
+    </div>
+
+    <div class="actions">
+      <button data-productid="<?= $product->getId() ?>"
+              title="<?= __('zur Anfrage') ?>"
+              class="action primary anfrage show-modal">
+        <span><?= __('zur Anfrage') ?></span>
+      </button>
+    </div>
+  </div>
+<?php endif; ?>

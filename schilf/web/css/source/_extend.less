@@ -1,0 +1,1485 @@
+@import "components/_mixins";
+@import "components/_responsive_extend";
+
+//
+//  Common
+//  _____________________________________________
+& when (@media-common = true) {
+
+    .products-grid.grid{
+        .product-item-actions .actions-secondary > .action::before{
+            font-size: 30px;
+            line-height: 30px;
+            margin-top: 24px;
+            padding-right: 10px;
+        }
+    }
+
+    //
+    //  Productline Section
+    //  -----------------------------------------
+    .productline-block {
+        h2,
+        > span {
+            color: @color-black;
+            display: block;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 30px;
+            line-height: 36px;
+            margin: 15px 0 30px;
+        }
+
+        .row {
+            margin-left: -8px;
+            margin-right: -8px;
+        }
+
+        [class*=col] {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+
+        .productline-big,
+        .productline-small {
+            background: #eae7e2;
+            margin-bottom: 7%;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+            }
+
+            .overlay-text {
+                .lib-vendor-prefix-display(flex);
+                .flex-align-items();
+                .flex-justify-content-center();
+                background: @color-white;
+                font-family: 'PT Sans', sans-serif;
+                font-size: 12px;
+                font-weight: 700;
+                border-top: 0;
+                border: solid 1px #f3f1ee;
+                padding: 0 30px;
+                height: 40px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+                z-index: 10;
+            }
+
+            .overlay-div {
+                background: rgba(109, 157, 159, 0.5);
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                transition: all ease 0.5s;
+                -webkit-transition: all ease 0.5s;
+                opacity: 0;
+                z-index: 9;
+            }
+
+            &:hover {
+                .overlay-div {
+                    opacity: 0.7;
+                    background: #000000;
+                }
+            }
+        }
+
+        .productline-small {
+            padding-bottom: 63%;
+        }
+
+        .productline-big {
+            padding-bottom: 133%;
+        }
+    }
+
+    //
+    //  Cart Page
+    //  -----------------------------------------
+    .inner-wrap .add-to-cart {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    .account .message.info.empty {
+        padding: 0;
+        font-size: 15px;
+        background: transparent;
+        color: #3a4545;
+        span:before {
+            display: none;
+        }
+    }
+    .product-detail-image {
+        .neu-ic, .top-ic {
+            display: none;
+        }
+    }
+
+    .checkout-cart-index {
+        #co-shipping-method-form,
+        #shipping-zip-form {
+            display: none;
+        }
+    }
+
+    .checkout-cart-index .customer-browsed .col-md-12 .row {
+        &:last-of-type {
+            margin-bottom: 40px !important;
+        }
+    }
+    .column.main .button-block {
+        .button-section {
+            ul li {
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        color: #111;
+                    }
+
+                }
+            }
+        }
+    }
+    .column.main {
+        .col-md-12 .newsletter-section-inner, .bestseller-container, #recommendation {
+            a, a.showall-btn {
+                text-decoration: none;
+            }
+            .product-block .product-item-link {
+                text-decoration: none;
+                &:hover, &:focus {
+                    text-decoration: none;
+                    color: #111;
+                }
+            }
+        }
+    }
+    .tab-link,
+    .minicart-items .product-item-name a,
+    h3.product-item-name-cart > a {
+        &:hover, &:focus, &:active {
+            color: #fbba06;
+        }
+    }
+    #toolbar-amount {
+        float: none;
+        padding: 0 0 15px;
+    }
+    .content-product .content-ul li label {
+        padding-left: 10px;
+    }
+
+    // Lehrerbuero
+    .cms-lehrerbuero {
+        .bradcrumb {
+            display: none;
+        }
+
+        #lehrerbuero-ihre-vorteile {
+            padding: 20px;
+            ul {
+                list-style: none;
+                font-size: 20px;
+                li {
+                    padding-left: 25px;
+                    &:before {
+                        position: absolute;
+                        top: 2px;
+                        left: -10px;
+                        display: inline-block;
+                        content: '';
+                        width: 25px;
+                        height: 25px;
+                        background: url("@{baseDir}images/lehrerbuero-logo.svg") no-repeat;
+                    }
+                }
+            }
+        }
+        .lehrerbuero-seo {
+            margin-bottom: 50px;
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    #lehrerbuero-banner {
+        font-family: 'Fira Sans', sans-serif;
+        position: relative;
+        .banner-button {
+            display: block;
+            padding: 10px;
+            background-color: #f29100;
+            color: #fff;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 22px;
+            font-family: 'PT Sans', sans-serif;
+            text-align: center;
+            text-decoration: none;
+            width: 200px;
+        }
+        .gratis-testen {
+            position: absolute;
+            top: 70px;
+            right: 50px;
+            width: 180px;
+            height: 180px;
+            border-radius: 90px;
+            background-color: #f29100;
+            transform: rotate(-10deg);
+            text-align: center;
+            padding-top: 45px;
+            h4, h3, h2 {
+                color: #fff;
+                margin: 0;
+            }
+            h2 {
+                font-weight: 700;
+                line-height: normal;
+            }
+            h3 {
+                font-weight: 300;
+            }
+            h4 {
+                font-size: 16px;
+            }
+        }
+        .banner-overlay {
+            position: absolute;
+            top: 140px;
+            left: 40px;
+            width: 36%;
+            min-width: 520px;
+            span[class*='heading'] {
+                display: block;
+            }
+            .heading--medium {
+                font-size: 56px;
+                font-weight: 300;
+                line-height: 60px;
+            }
+            .heading--large {
+                font-size: 80px;
+                font-weight: 300;
+                line-height: 88px;
+            }
+            .heading--small {
+                font-weight: 600;
+                font-size: 34px;
+                line-height: 40px;
+            }
+        }
+    }
+    #lehrerbuero-einzelmitglied {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        margin: 50px 0;
+        > div {
+            width: 49%;
+            background-color: #ECEFEF;
+            border-radius: 8px;
+            position: relative;
+            a {
+                text-decoration: none;
+                &:hover, &:focus {
+                    color: #000;
+                }
+            }
+            h4 {
+                font-size: 26px;
+                font-weight: 700;
+                color: #3c3c3c;
+            }
+            p {
+                font-size: 20px;
+                color: #393939;
+            }
+            .text {
+                padding: 10px 25px 120px;
+            }
+        }
+        .lehrerbuero-button {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            display: block;
+            width: 340px;
+            padding: 8px;
+            background-color: #f29100;
+            color: #fff;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 22px;
+            font-family: 'PT Sans', sans-serif;
+            text-align: center;
+            text-decoration: none;
+        }
+    }
+
+    //
+    //  Links
+    //  -----------------------------------------
+    .cms-page-view .page-main .column.main,
+    .cms-no-route .page-main .column.main,
+    .checkout-agreement .action,
+    .message.global.cookie,
+    .product.attribute.description {
+        a {
+            color: inherit;
+            text-decoration: underline;
+
+            &:hover {
+                color: @golden-rod-color;
+            }
+        }
+
+        a:visited,
+        a:focus,
+        .alink:visited {
+            font-weight: normal;
+        }
+    }
+
+    //
+    //  Category page
+    //  -----------------------------------------
+    .product-listing-sidebar {
+        .submenu-active,
+        .menu-active {
+            > a {
+                font-weight: bold;
+                color: @golden-rod-color;
+            }
+        }
+
+        .sidebar-title {
+            margin: 15px 0;
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+
+    .product-listing-middle {
+        .product-detail-link {
+            margin-bottom: 15px;
+
+            .description-a,
+            .product-listing-view-text p {
+                font-size: 14px;
+            }
+
+            a {
+                color: inherit;
+
+                &:hover {
+                    color: @golden-rod-color;
+                }
+
+                i {
+                    background: #70a49f;
+                    color: #fff;
+                    font-weight: 400;
+                    height: 20px;
+                    margin-right: 10px;
+                    position: relative;
+                    top: 4px;
+                    width: 20px;
+
+                    &:before {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+
+            a:visited,
+            a:focus,
+            .alink:visited {
+                font-weight: normal;
+            }
+
+            &.detail-link-list {
+                float: left;
+                line-height: 1.4;
+                vertical-align: top;
+
+                a {
+                    display: inline;
+                    vertical-align: top;
+
+                    i {
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        .product-bottom {
+            .product-price {
+                float: none;
+            }
+        }
+    }
+
+    .toolbar-sorter {
+        > span {
+            display: none;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+    }
+
+    //
+    //  Category Page Title Logo
+    //  -----------------------------------------
+    .productstore-index-index {
+        .logo-description {
+            ul {
+                list-style-position: inside;
+
+                li {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    //
+    //  Links in text
+    //  -----------------------------------------
+    p a:not(.product-item-link) {
+        color: inherit;
+        text-decoration: underline;
+
+        &:hover {
+            color: @golden-rod-color;
+        }
+
+        &:visited,
+        &:focus,
+        .alink:visited {
+            font-weight: normal;
+        }
+    }
+
+    //
+    //  Footer
+    //  -----------------------------------------
+    .footer-top {
+        .footerbox {
+            .footer-links {
+                &-title > span {
+                    font-weight: 600;
+                    font-family: 'PT Sans', sans-serif;
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: #111;
+                    text-transform: uppercase;
+                    margin: 0 0 10px;
+                }
+            }
+        }
+    }
+
+    //
+    //  Payment Icons - Footer, Checkout
+    //  -----------------------------------------
+    .company-logo {
+        li {
+            margin-bottom: 0;
+
+            p {
+                font-size: 10px;
+                line-height: 28px;
+
+                i {
+                    font-size: 28px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    .payment-method {
+        &-title {
+            .label {
+                i {
+                    font-size: 28px;
+                    width: 32px;
+                    margin-right: 15px;
+                }
+
+                span {
+                    display: inline-block;
+                    line-height: 28px;
+                    margin-bottom: 0;
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+
+    //
+    //  Cookie notice
+    //  -----------------------------------------
+    .message.global.cookie {
+        background: rgba(149, 180, 230, 0.7) !important;
+        font-size: 14px;
+        .container {
+            width: 100%;
+            padding: 0;
+            p {
+                width: calc(~"100% - 60px");
+            }
+        }
+        .action.primary,
+        .action.primary:focus {
+            background: transparent;
+            color: #000;
+            padding: 5px 20px;
+
+            span {
+                font-size: 28px;
+            }
+        }
+    }
+
+    //
+    //  Lehrerbedarf Cms Page
+    //  -----------------------------------------
+    .cms-lehrerbedarf {
+        .container-crumbs {
+            display: none;
+        }
+
+        .menu-lehrerladen {
+            > nav > ul > li {
+                width: 25%;
+            }
+
+        }
+    }
+
+    //
+    //  Newsletter-anmeldung Cms Page
+    //  -----------------------------------------
+    .cms-newsletter-anmeldung {
+        .disclaimer {
+            margin-bottom: 40px;
+        }
+    }
+
+    //
+    //  iOs Safari checkbox style fix
+    //  -----------------------------------------
+    input[type="radio"] {
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgb(76, 76, 76);
+        color: 1px solid rgb(76, 76, 76);
+    }
+
+    input[type="checkbox"] {
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgb(76, 76, 76);
+        color: 1px solid rgb(76, 76, 76);
+    }
+    #video {
+        position: absolute;
+        top: 11.8%;
+        right: 12.7%;
+        width: 38%;
+        height: 73%;
+    }
+
+    //
+    //  Zusatzmaterial customer login
+    //  -----------------------------------------
+    .zusatzmaterial-customer-login {
+        .page-title {
+            margin-bottom: 15px;
+        }
+        .cus-gratisdownload ol {
+            padding: 0 20px;
+        }
+    }
+
+    //
+    //  Product Page - Review Tab
+    //  -----------------------------------------
+    #review-add {
+        margin-bottom: 15px;
+    }
+
+    .bestellung-download {
+        float: left;
+        margin: 20px 0;
+    }
+
+    .page-title-wrapper {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    nav ul li:hover > .megamenu {
+        display: block;
+        -webkit-animation: fadeIn 0.5s;
+        animation: fadeIn 0.5s;
+    }
+
+    .nav-block .lehrerbedarf-top-menu > li {
+        width: 25%;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) { // max 639px
+
+    //
+    //  Payment Icons - Footer, Checkout
+    //  -----------------------------------------
+    .company-logo {
+        .lib-vendor-prefix-display(flex);
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        li {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            padding-left: 0;
+        }
+    }
+}
+
+//
+//  Tablet
+//  _____________________________________________
+.media-width(@minBreak, @maxBreak) when (@minBreak = @screen__m) and (@maxBreak = @screen__ml) { // 678 - 1023 px
+    //
+    //  Homepage - Customer Review Section
+    //  -----------------------------------------
+    .customer-review {
+        .review-text {
+            p {
+                margin: 0 0 15px;
+            }
+        }
+    }
+}
+
+//
+//  Tablet / Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    .toolbar-sorter {
+        > span {
+            display: inline;
+        }
+    }
+    .video-frame {
+        display: none;
+    }
+    .lehrerbuero-text {
+        display: none;
+    }
+    .catalog-product-view {
+        .available-motif {
+            padding-top: 10px;
+            margin-bottom: 45px;
+        }
+    }
+
+    .lehrerbuero-mob-banner {
+        display: none;
+    }
+
+    //
+    //  Homepage - Customer Review
+    //  -----------------------------------------
+    .customer-review {
+        .lib-vendor-prefix-display(flex);
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        .review-text,
+        .client-testimonial {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+
+            .ekomi-widget-container {
+                float: right;
+            }
+
+            span {
+                display: block;
+                margin: 0 0 15px;
+            }
+        }
+
+        .client-testimonial {
+            text-align: right;
+
+            span {
+                font-size: 22px;
+                line-height: 30px;
+            }
+        }
+
+        .review-text {
+            span {
+                font-size: 26px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    //
+    //  Category Page Title Logo
+    //  -----------------------------------------
+    .productstore-index-index {
+        h1.page-title {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .page-title-logo {
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        .logo-description {
+            margin-bottom: 50px;
+        }
+    }
+
+    //
+    //  Product page
+    //  -----------------------------------------
+    .catalog-product-view {
+        .product-detail-image img {
+            max-width: 100%;
+        }
+
+        .example-image-link.detail-search-ic img {
+            margin: 0 auto;
+        }
+
+        /* Product slider navigation fix */
+        .slider-nav {
+            .slick-track {
+                height: auto !important;
+                width: 300px !important;
+                transform: none !important;
+
+                img {
+                    padding-left: 3px;
+                    padding-right: 3px;
+                }
+            }
+        }
+    }
+
+    //
+    //  Product Page - Review Tab
+    //  -----------------------------------------
+    #review-add {
+        margin-bottom: 15px;
+
+        .review-add-title {
+            display: block;
+            margin: 15px 0;
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+    //
+    //  Product page
+    //  -----------------------------------------
+    .catalog-product-view {
+        .product.info.detailed {
+            .product-preview-section {
+                .lib-vendor-prefix-display(flex);
+                padding: 20px 20px 40px;
+
+                .product-preview-block {
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 20%;
+                    flex: 0 0 20%;
+
+                    .preview-img:hover {
+                        border: 1px solid @golden-rod-color;
+                    }
+                }
+            }
+        }
+
+        .column.main {
+            .product.media {
+                width: 40%;
+
+                .neu-ic,
+                .top-ic {
+                    display: none;
+                }
+            }
+
+            .product-info-main {
+                width: 58%;
+            }
+        }
+    }
+
+    //
+    //  Cookie notice
+    //  -----------------------------------------
+    .message.global.cookie {
+        .content {
+            p {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .cms-lehrerbuero {
+        #lehrerbuero-banner {
+            .gratis-testen {
+                width: 100px;
+                height: 100px;
+                padding-top: 7px;
+                h2 {
+                    font-size: 16px;
+                }
+            }
+            .banner-button {
+                width: 120px;
+                padding: 7px;
+                font-size: 16px;
+            }
+            .banner-overlay {
+                top: auto;
+                bottom: 0;
+                left: 10px;
+                min-width: 220px;
+                span[class*='heading'] {
+                    line-height: normal;
+                }
+                .heading--small {
+                    font-size: 18px;
+                }
+                .heading--medium {
+                    font-size: 16px;
+                }
+                .heading--large {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .newsletter-section-inner span.newsletter {
+        font-size: 18px !important;
+    }
+
+    .cms-lehrerbuero {
+        .container.columns {
+            width: 100%;
+            padding: 0;
+        }
+        #lehrerbuero-banner {
+            .heading--large {
+                font-size: 68px;
+            }
+            .gratis-testen {
+                top: 20px;
+                right: 20px;
+            }
+            .banner-overlay {
+                top: 40px;
+                left: 40px;
+            }
+        }
+        .lehrerbuero-seo {
+            margin: 0 20px 40px;
+        }
+    }
+}
+
+.banner-video {
+    position: relative;
+}
+
+//
+// Tablets, Ipads
+//
+
+@media screen and (max-width: 1199px) {
+    .nav-block nav ul li {
+        .megamenu {
+            padding-top: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        > .toggle-btn-wrapper {
+            cursor: pointer;
+            background: #f2f1ed;
+            background-size: 8px;
+            height: 50px;
+            position: absolute;
+            right: 2px;
+            top: 3px;
+            width: 45px;
+            opacity: 0.8;
+            z-index: 1;
+            &:hover, &:focus, &:active {
+                opacity: 1;
+            }
+            .toggle-btn {
+                display: block;
+                height: 100%;
+                background: url("@{baseDir}images/right-feil.svg") no-repeat center center;
+                background-size: 8px;
+                transition: all 0.7s ease;
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+            &.active .toggle-btn {
+                transform: rotate(270deg);
+                -webkit-transform: rotate(270deg);
+            }
+        }
+        &.Online .toggle-btn-wrapper {
+            display: none;
+        }
+    }
+
+    .nav-block {
+        > .container {
+            min-height: 100vh;
+            overflow-y: auto;
+            padding: 0;
+            position: relative;
+            > .row {
+                width: 100%;
+                position: absolute;
+            }
+        }
+    }
+
+    .product-block {
+        #showLess,
+        #loadMore {
+            color: #000000;
+            font-family: PTSans;
+            font-size: 10px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            width: 180px;
+            height: 30px;
+            background-color: #fbba06;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: -30px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .customer-browsed-section .product-block .col-md-3 {
+        max-height: 520px;
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        left: 15px;
+        margin-right: 25px;
+        margin-top: 20px;
+        position: absolute;
+        top: 0;
+    }
+
+    .header-block {
+        img.logo {
+            margin-left: 40px;
+            height: 40px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-top: 9px;
+            width: auto;
+            background-color: transparent;
+        }
+    }
+
+    .menu-toggle .fa {
+        font-size: 24px;
+    }
+
+    .nav-block {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        nav ul {
+            background-color: #ddd7cf;
+            li {
+                width: 100%;
+                padding: 10px 0;
+                text-align: left;
+                border-left: 0;
+                position: relative;
+                border-bottom: 1px solid #e2dfd5;
+                margin: 0;
+                &:hover, &.active {
+                    a {
+                        background: transparent;
+                    }
+                }
+            }
+            .megamenu {
+                position: static;
+                li {
+                    margin: 0;
+                    padding: 5px 0;
+                    > .toggle-btn-wrapper {
+                        height: 40px;
+                        top: 0;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .user-access .minicart-wrapper .block-minicart {
+        right: 0;
+        left: auto;
+    }
+
+    .searchbox.visible-sm {
+        display: block !important;
+        width: 100%;
+        form {
+            display: block;
+            .search {
+                width: 92.5%;
+            }
+        }
+    }
+
+    .customer-review {
+        .lib-vendor-prefix-flex-direction(column);
+        padding: 30px 37px 80px 37px;
+        position: relative;
+        .review-text,
+        .client-testimonial {
+            width: 100%;
+            margin-bottom: 0;
+            .ekomi-widget-container {
+                float: none;
+            }
+        }
+        .client-testimonial {
+            text-align: left;
+        }
+        .review-btn {
+            position: absolute;
+            bottom: 30px;
+        }
+    }
+
+    .column.main .button-block {
+        .button-section {
+            ul li {
+                margin-left: 0;
+                margin-right: 0;
+                background: transparent;
+                padding: 0 2px;
+                width: 25%;
+                a {
+                    word-wrap: break-word;
+                    padding: 11px 3px;
+                    box-sizing: border-box;
+                    border: 1px solid #111;
+                    text-align: center;
+                    min-height: 81px;
+                    text-decoration: none;
+                    &:hover {
+                        color: #111;
+                    }
+                    img {
+                        display: block;
+                        margin: 10px auto 0;
+                        float: none;
+                    }
+                }
+                &:last-of-type a {
+                    padding-bottom: 13px;
+                }
+            }
+        }
+    }
+
+    input[type="radio"] {
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgb(76, 76, 76);
+        color: 1px solid rgb(76, 76, 76);
+    }
+
+    input[type="checkbox"] {
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgb(76, 76, 76);
+        color: 1px solid rgb(76, 76, 76);
+    }
+}
+
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { // max 767px
+
+
+    .page-title-wrapper {
+        margin-left:12px;
+        .page-title {
+            font-size: 25px;
+        }
+    }
+
+    //
+    //  Sitemap
+    //  -----------------------------------------
+    .categorysitemap{
+        ul{
+            padding: 0 !important;
+            li{
+                padding: 0;
+                ul{
+                    padding: 8px 0 !important;
+                }
+            }
+        }
+    }
+
+    .products-grid.grid {
+        .product-item-actions .actions-secondary > .action::before {
+            margin-top: 32px !important;
+        }
+    }
+
+    .product-listing-sidebar {
+        .sidebar-title {
+            display: none;
+        }
+    }
+
+    //
+    //  Productline Section
+    //  -----------------------------------------
+    .container.productline-block {
+        h2,
+        > span {
+            font-size: 19px;
+        }
+
+        &.productline-lehrerladen,
+        &.productline-lehrerbedarf {
+            width: 92%;
+
+            .overlay-text {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .cms-lehrerbedarf {
+        .container {
+            padding: 0;
+        }
+        .columns .button-section ul {
+            padding: 0;
+        }
+    }
+    .lehrerbuero-text {
+        display: block;
+        padding: 15px;
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-weight: 700;
+        }
+        h2 {
+            margin: 0 0 20px;
+            font-size: 20px;
+        }
+    }
+    .banner-video {
+        .video-frame {
+            display: block;
+        }
+        #video {
+            top: 2%;
+            right: 11%;
+            width: 76%;
+            height: 80%;
+        }
+        img {
+            display: none;
+        }
+    }
+    .catalog-product-view {
+        .available-motif {
+            padding-top: 10px;
+            margin-bottom: -40px;
+        }
+    }
+
+    //
+    //  Product page
+    //  -----------------------------------------
+    .catalog-product-view {
+        .product-detail-image img {
+            margin: 0 auto;
+        }
+
+        .slick-slider {
+            margin: 20px auto 0;
+        }
+    }
+
+    .opc-estimated-wrapper .minicart-wrapper {
+        button.action.showcart {
+            background: url("@{baseDir}images/Warenkorb_Icon.svg") no-repeat;
+            width: 48px;
+            background-size: 23px;
+            &:focus, &:hover, &:active {
+                background: url("@{baseDir}images/Warenkorb_Icon.svg") no-repeat;
+                background-size: 23px;
+            }
+            .counter.qty {
+                position: relative;
+                top: -7px;
+                left: -4px;
+            }
+        }
+    }
+
+    //
+    //  Kundenbewertung Danke CMS Page
+    //  -----------------------------------------
+    .cms-kundenbewertung-danke {
+        .kundenbewertung-danke-table {
+            table-layout: fixed;
+
+            td {
+                p {
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+
+    .toolbar-amount,
+    #toolbar-amount {
+        position: static;
+    }
+    .toolbar-products {
+        .pages{
+            position: static !important;
+        }
+    }
+
+    .toolbar-sorter.sorter .bootstrap-select .btn-default {
+        min-width: 155px;
+    }
+    .mutliSelect .content-ul label {
+        font-size: 10px;
+    }
+    .filter-options-price .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+        width: calc(~"100% - 40px");
+    }
+    .filter-options .mutliSelect .content-ul input {
+        top: 1px;
+    }
+    .newsletter-section-inner {
+        background-size: auto;
+    }
+    .menu-toggle {
+        margin-top: 8px;
+    }
+    .page-header .header-block {
+        img.logo {
+            margin-top: 0;
+        }
+    }
+    //
+    //  Homepage - Customer Review
+    //  -----------------------------------------
+    .customer-review {
+        .client-testimonial {
+            span {
+                display: block;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .review-text {
+            span {
+                display: block;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    //
+    //  Category Page Title Logo
+    //  -----------------------------------------
+    .productstore-index-index {
+        .page-title-logo {
+            text-align: center;
+        }
+
+        .logo-description {
+            margin-bottom: 20px;
+        }
+    }
+    .cms-lehrerbuero {
+        .lehrerbuero-seo {
+            h2 {
+                font-size: 18px;
+            }
+            p {
+                font-size: 12px !important;
+            }
+        }
+        #lehrerbuero-ihre-vorteile {
+            h2 {
+                font-size: 18px;
+            }
+            ul {
+                padding: 0;
+                li {
+                    font-size: 12px;
+                }
+            }
+        }
+        #lehrerbuero-banner {
+            img:first-of-type {
+                display: none;
+            }
+        }
+        #lehrerbuero-einzelmitglied {
+            flex-direction: column;
+            align-items: center;
+            > div {
+                width: 100%;
+                max-width: 600px;
+                h4 {
+                    font-size: 18px;
+                }
+                p {
+                    font-size: 12px;
+                }
+                .text {
+                    padding: 10px 25px 60px;
+                }
+            }
+            .lehrerbuero-button {
+                width: auto;
+                font-size: 14px;
+            }
+        }
+        #laptop-video-wrapper {
+            background-size: contain;
+            img {
+                height: auto;
+            }
+        }
+        .img-mob {
+            display: block !important;
+        }
+    }
+
+    //
+    //  Product Page - Review Tab
+    //  -----------------------------------------
+    #review-add {
+        margin-bottom: 15px;
+
+        .review-add-title {
+            display: block;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) { // max 479px
+
+    //
+    //  Header Logo
+    //  -----------------------------------------
+    .sticky-header {
+        .header-block {
+            .a-logo {
+                img.logo {
+                    margin-left: 48px;
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .productline-block {
+        .overlay-text {
+            line-height: 0.9;
+        }
+    }
+}
+
+

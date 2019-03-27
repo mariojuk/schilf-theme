@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+
+?>
+<div class="block newsletter">
+    <div class="title"><strong><?= $block->escapeHtml(__('Newsletter')) ?></strong></div>
+    <div class="content">
+        <form class="form subscribe"
+            novalidate
+            action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+            method="post"
+            data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+            id="newsletter-validate-detail">
+            <div class="field newsletter">
+                <h3><?= $block->escapeHtml(__('Newsletter bestellen')) ?></h3>
+                <a href="<?= $block->getBaseUrl() . 'newsletter' ?>">
+                    <img src="<?php echo $this->getViewFileUrl("images/newsletter-button.jpg"); ?>" alt="Newsletter" title="Newsletter">
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

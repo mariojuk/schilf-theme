@@ -1,0 +1,24 @@
+<?php
+/**
+ * @var $block \Schilf\Products\Block\Product\Referent
+ * @var $product \Magento\Catalog\Model\Product
+ */
+
+$referent = $block->getReferent();
+?>
+<?php if($referent): ?>
+  <div class="referent">
+    <!--    image goes here -->
+
+    <div class="right">
+      <div><?= __('Unser Referent') ?></div>
+      <div><?= $block->getReferentFullName() ?></div>
+    </div>
+
+    <p class="biography"><?= $referent->getBio() ?></p>
+    <div>
+      <div class="left"><?= __('Fortbildungen mit Kristian Seewald') ?></div>
+      <div><a class="referent_link" href="<?= $block->getReferentUrl() ?>">link</a></div>
+    </div>
+  </div>
+<?php endif; ?>

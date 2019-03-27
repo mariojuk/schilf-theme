@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var \Magento\Cookie\Block\Html\Notices $block */ ?>
+<?php if ($this->helper('Magento\Cookie\Helper\Cookie')->isCookieRestrictionModeEnabled()): ?>
+    <div class="message global cookie" id="notice-cookie-block" style="display: none">
+        <div class="content container">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('cookie-notice')->toHtml();?>
+            <div class="actions">
+                <button id="btn-cookie-allow" class="action allow primary">
+                    <span><?php /* @escapeNotVerified */ echo __('X');?></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script type="text/x-magento-init">
+        {
+            "#notice-cookie-block": {
+                "cookieNotices": {
+                    "cookieAllowButtonSelector": "#btn-cookie-allow",
+                    "cookieName": "<?php /* @escapeNotVerified */ echo \Magento\Cookie\Helper\Cookie::IS_USER_ALLOWED_SAVE_COOKIE ?>",
+                    "cookieValue": <?php /* @escapeNotVerified */ echo $this->helper('Magento\Cookie\Helper\Cookie')->getAcceptedSaveCookiesWebsiteIds() ?>,
+                    "cookieLifetime": <?php /* @escapeNotVerified */ echo $this->helper('Magento\Cookie\Helper\Cookie')->getCookieRestrictionLifetime()?>,
+                    "noCookiesUrl": "<?php /* @escapeNotVerified */ echo $block->getUrl('cookie/index/noCookies') ?>"
+                }
+            }
+        }
+    </script>
+<?php endif; ?>

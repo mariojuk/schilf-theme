@@ -1,0 +1,40 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\CatalogWidget\Block\Product\ProductsList $block */
+?>
+<?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())): ?>
+    <?php
+    $type = 'widget-product-list';
+
+    $mode = 'list';
+
+    $image = 'new_products_content_widget_grid';
+    $items = $block->getProductCollection()->getItems();
+
+    $showWishlist = false;
+    $showCompare = false;
+    $showCart = false;
+    $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::DEFAULT_VIEW;
+    $description = false;
+    ?>
+
+    <ul class="product-items <?= /* @noEscape */ $type ?>">
+        <?php $iterator = 1; ?>
+        <?php foreach ($items as $_item): ?>
+            <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
+            <a title="<?= $block->escapeHtml($_item->getName()) ?>"
+               href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
+               class="product-item-link">
+                <?= $block->escapeHtml($_item->getName()) ?>
+            </a>
+            <?= ($iterator == count($items)+1) ? '</li>' : '' ?>
+        <?php endforeach ?>
+    </ul>
+
+<?php endif;?>

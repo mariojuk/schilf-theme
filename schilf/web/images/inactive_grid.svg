@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>inactive_grid</title>
+    <desc>Created with Sketch.</desc>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="search_list" transform="translate(-1567.000000, -275.000000)" fill="#DADCDC">
+            <g id="Raster_Icon" transform="translate(1536.000000, 275.000000)">
+                <g id="inactive_grid" transform="translate(31.000000, 0.000000)">
+                    <rect id="Rectangle-16" x="0" y="0" width="5.06864468" height="5.06864468"></rect>
+                    <polygon id="Rectangle-16-Copy-3" points="6.51682888 0 11.5854736 0 11.5854736 5.06864468 6.51682888 5.06864468"></polygon>
+                    <polygon id="Rectangle-16-Copy-6" points="13.0336578 0 18.1023024 0 18.1023024 5.06864468 13.0336578 5.06864468"></polygon>
+                    <polygon id="Rectangle-16-Copy" points="0 6.51682888 5.06864468 6.51682888 5.06864468 11.5854736 0 11.5854736"></polygon>
+                    <polygon id="Rectangle-16-Copy-4" points="6.51682888 6.51682888 11.5854736 6.51682888 11.5854736 11.5854736 6.51682888 11.5854736"></polygon>
+                    <polygon id="Rectangle-16-Copy-7" points="13.0336578 6.51682888 18.1023024 6.51682888 18.1023024 11.5854736 13.0336578 11.5854736"></polygon>
+                    <polygon id="Rectangle-16-Copy-2" points="0 13.0336578 5.06864468 13.0336578 5.06864468 18.1023024 0 18.1023024"></polygon>
+                    <polygon id="Rectangle-16-Copy-5" points="6.51682888 13.0336578 11.5854736 13.0336578 11.5854736 18.1023024 6.51682888 18.1023024"></polygon>
+                    <polygon id="Rectangle-16-Copy-8" points="13.0336578 13.0336578 18.1023024 13.0336578 18.1023024 18.1023024 13.0336578 18.1023024"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

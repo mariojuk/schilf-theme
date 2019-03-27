@@ -1,0 +1,490 @@
+& when (@media-common = true) {
+    .catalog-product-view {
+        .columns .column.main {
+            padding-bottom: 0;
+        }
+    }
+    .fotorama__caption {
+        display: none;
+    }
+    .product-info-main {
+        position: relative;
+        .product-item-top {
+            .product.name {
+                margin: 30px 0 10px;
+                font: 40px/50px Georgia;
+            }
+            .product-item-label {
+                width: 72px;
+                line-height: 72px;
+                background: @orange;
+                font: bold 18px/72px 'Roboto';
+            }
+        }
+        .product-info-description {
+            font: 18px/30px Georgia;
+        }
+    }
+    .product-info-details {
+        .product-details-variations {
+            clear: both;
+            .tabs {
+                .lib-vendor-prefix-display(flex);
+                .tab {
+                    width: 20%;
+                    .tab-link {
+                        width: 170px;
+                        padding-bottom: 15px;
+                        display: inline-block;
+                        font: 500 16px/20px 'Roboto';
+                        text-align: center;
+                        color: #91aeb0;
+                        &:before {
+                            content: '';
+                            display: block;
+                            margin: 10px auto;
+                            width: 70px;
+                            height: 70px;
+                            background: #91aeb0 no-repeat center;
+                            border-radius: 50%;
+                            transition: all 0.3s ease;
+                        }
+                        &:hover {
+                            color: @deep-teal;
+                            &:before {
+                                background-color: @deep-teal;
+                            }
+                        }
+                    }
+                    .tab-link.ss:before {
+                        background-image: url("@{baseDir}images/tab_1.png");
+                    }
+                    .tab-link.se:before {
+                        background-image: url("@{baseDir}images/tab_2.png");
+                    }
+                    .tab-link.sk:before {
+                        background-image: url("@{baseDir}images/tab_3.png");
+                    }
+                    .tab-link.sv:before {
+                        background-image: url("@{baseDir}images/tab_4.png");
+                    }
+                    .tab-link.sd:before {
+                        background-image: url("@{baseDir}images/tab_5.png");
+                    }
+                    &#current {
+                        position: relative;
+                        .tab-link {
+                            color: @deep-teal;
+                            &:before {
+                                background-color: @deep-teal;
+                            }
+                        }
+                        &:after {
+                            z-index: 1;
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            left: 72px;
+                            bottom: -15px;
+                            position: absolute;
+                            border-left: 15px solid transparent;
+                            border-right: 15px solid transparent;
+                            border-top: 15px solid #fff;
+                        }
+                    }
+                }
+            }
+            .product-format {
+                display: block;
+                margin-bottom: 0;
+                font: 300 16px 'Roboto';
+                color: @deep-teal;
+            }
+            .tab_content {
+                box-sizing: border-box;
+                max-width: 1210px;
+                margin: 0 auto;
+                padding: 35px 20px 70px;
+                background: @light-grey-two;
+                .title {
+                    display: inline-block;
+                    background: #91aeb0;
+                    padding: 0 10px;
+                    font: 500 19px/26px 'Roboto';
+                    color: #fff;
+                }
+                .description {
+                    font: 400 18px/30px Georgia;
+                    h2 {
+                        margin: 0;
+                    }
+                }
+                .keywords-headline {
+                    color: @deep-teal;
+                    font: 700 24px/30px 'Roboto';
+
+                }
+                .keywords-list {
+                    display: inline-block;
+                    width: 50%;
+                    padding-left: 20px;
+                    counter-reset: counter;
+                    list-style: none;
+                    font: 400 16px/40px 'Roboto';
+                    li {
+                        position: relative;
+                        padding-left: 15px;
+                        counter-increment: counter;
+                        &:before {
+                            content: counter(counter) ". ";
+                            color: @deep-teal;
+                            font: bold 24px 'Roboto';
+                            position: absolute;
+                            left: -20px;
+                            top: 4px;
+                        }
+                    }
+                }
+                .seminar_price_wrapper,
+                .actions {
+                    float: right;
+                }
+                .seminar_price_container {
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-prefix-flex-wrap(wrap);
+                    clear: both;
+                    padding: 10px 20px;
+                    background: #fff;
+                    .seminar_price {
+                        .lib-vendor-prefix-flex-grow(1);
+                        > span {
+                            display: inline-block;
+                            line-height: 4rem;
+                        }
+                        .price-box {
+                            .price {
+                                font: 300 40px 'Roboto';
+                            }
+                        }
+                    }
+                    .action.primary {
+                        line-height: 4rem;
+                    }
+                }
+                .tax_text {
+                    margin-top: 15px;
+                    font: 400 16px 'Roboto';
+                    color: @greyish;
+                }
+                .training_text {
+                    margin: 65px 0;
+                    .training-title {
+                        font: bold 18px/30px 'Roboto';
+                    }
+                    .training_points {
+                        .lib-vendor-prefix-display(flex);
+                        justify-content: space-between;
+                        list-style-image: url("@{baseDir}images/check.png");
+                        padding-left: 25px;
+                        li {
+                            font: 400 16px/30px 'Roboto';
+                            strong {
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+                .seminar_vorteil {
+                    float: right;
+                    width: 40%;
+                    margin-bottom: 40px;
+                    background: #fff;
+                    p {
+                        background-color: #e5e5dd;
+                        padding: 15px 25px;
+                        font-family: Roboto, sans-serif;
+                        font-size: 18px;
+                        font-weight: 700;
+                        color: #000;
+                        margin: 0 0 20px;
+                    }
+                    ul {
+                        font: 400 16px/30px 'Roboto';
+                        list-style-image: url("@{baseDir}images/check.png");
+                        padding: 0 50px 10px;
+                    }
+                }
+            }
+        }
+    }
+    .price-details,
+    .tax-details {
+        display: none;
+    }
+    .product-details-bottom {
+        clear: both;
+        .lib-vendor-prefix-display(flex);
+    }
+    .certificate,
+    .quote,
+    .book-reference {
+        flex: 1 1 0;
+        min-height: 515px;
+        box-sizing: border-box;
+        .lib-vendor-prefix-display(flex);
+        padding: 25px;
+        text-align: center;
+    }
+    .certificate,
+    .book-reference {
+        .lib-vendor-prefix-flex-direction(column);
+        text-align: center;
+        background: #fff;
+        color: @deep-teal;
+        img {
+            height: auto;
+        }
+        &_title {
+            display: inline-block;
+            font: 400 24px Georgia;
+            &:before {
+                position: relative;
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                display: inline-block;
+                content: '';
+            }
+        }
+    }
+    .certificate {
+        img {
+            margin: 65px auto;
+            width: 135px;
+        }
+        &_title {
+            &:before {
+                top: 8px;
+                background: url("@{baseDir}images/zertifikat.png") no-repeat;
+            }
+        }
+    }
+    .book-reference {
+        img {
+            margin: 80px auto;
+            width: 105px;
+        }
+        &_title {
+            &:before {
+                top: 12px;
+                background: url("@{baseDir}images/book-open.png") no-repeat;
+            }
+        }
+        .book_author {
+            margin-bottom: 0;
+            font: 400 16px/25px 'Roboto';
+        }
+        .book_info {
+            font: 300 16px/25px 'Roboto';
+        }
+    }
+    .quote {
+        align-items: center;
+        background: rgba(0, 71, 86, 0.2) url("@{baseDir}images/screen-share.png") no-repeat;
+        background-position: center 60px;
+        color: @deep-teal;
+        font: italic 400 23px/35px Georgia;
+        &_text {
+            max-width: 340px;
+            margin: 0 auto;
+        }
+    }
+    .individual_question {
+        .lib-vendor-prefix-display(flex);
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        text-align: center;
+        min-height: 690px;
+        > div {
+            max-width: 485px;
+        }
+        &_title {
+            margin: 0 0 60px;
+            color: @deep-teal;
+            font: 700 36px'Roboto';
+        }
+        p {
+            margin: 40px 0;
+            font: 400 16px/25px 'Roboto';
+        }
+        .actions {
+            margin: 20px 0 0;
+            span {
+                margin: 0 10px;
+                font: 500 17px 'Roboto';
+            }
+            .show-modal {
+                width: 140px;
+            }
+        }
+    }
+}
+
+// Tablet
+@media only screen and (max-width: 1025px) {
+    .product-info-main {
+        .product-item-top {
+            .product.name {
+                font: 36px/50px Georgia;
+            }
+            .product-item-label {
+            }
+        }
+    }
+    .product-info-details {
+        .product-details-variations {
+            .tabs {
+                .tab {
+                    .tab-link {
+                        width: 125px;
+                        &:before {
+                            width: 50px;
+                            height: 50px;
+                            background: #91aeb0 no-repeat center/20px;
+                        }
+                    }
+                    &#current:after {
+                        left: 50px;
+                    }
+                    .tab-link.ss:before,
+                    .tab-link.sv:before {
+                        background-size: 28px;
+                    }
+                }
+            }
+            .tab_content {
+                padding: 40px 60px 0;
+                .training_text .training_points {
+                    display: block;
+                }
+                .seminar_vorteil {
+                    float: none;
+                    margin-left: 0;
+                    width: 100%;
+                    p {
+                    }
+                    ul {
+                        padding: 0 15px 10px 45px;
+                    }
+                }
+                .keywords-list {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .certificate,
+    .quote,
+    .book-reference {
+        min-height: 480px;
+    }
+    .product-details-bottom {
+        display: block;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+}
+
+
+// Mobile
+@media only screen and (max-width: 767px) {
+    .catalog-product-view .columns .column.main {
+        padding: 0;
+    }
+    .product-info-main {
+        padding: 35px 15px;
+        background: @light-grey-two;
+        .product-item-top {
+            .product-item-label {
+                z-index: 1;
+                position: absolute;
+                right: 15px;
+                top: -36px;
+            }
+            .product.name {
+                font: 25px/34px Georgia;
+            }
+        }
+        .product-info-description {
+            font: 14px/20px Georgia;
+        }
+    }
+    .product-info-details {
+        .product-details-variations {
+            .tabs {
+                padding: 0 10px;
+                .tab {
+                    .tab-link {
+                        width: 70px;
+                        font: 400 9px/14px 'Roboto';
+                        &:before {
+                            width: 38px;
+                            height: 38px;
+                            background: #91aeb0 no-repeat center/18px;
+                        }
+                    }
+                    .tab-link.ss:before,
+                    .tab-link.sv:before {
+                        background-size: 22px;
+                    }
+                    &#current:after {
+                        display: none;
+                    }
+                }
+            }
+            .product-format {
+                text-align: center;
+                font: 300 12px/45px 'Roboto';
+            }
+            .tab_content {
+                padding: 20px 10px;
+                background: @light-grey-two;
+                .title {
+                    display: inline-block;
+                    background: #91aeb0;
+                    padding: 0 10px;
+                    font: 500 12px/22px 'Roboto';
+                    color: #fff;
+                }
+                .seminar_price_wrapper,
+                .actions {
+                    float: none;
+                    margin-top: 20px;
+                }
+                .seminar_price_container {
+                    padding: 0;
+                    background: @light-grey-two;
+                    .seminar_price {
+                        > span {
+                            font: 400 16px 'Roboto';
+
+                        }
+                        .price-box {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .certificate,
+    .quote,
+    .book-reference {
+        min-height: 515px;
+    }
+}

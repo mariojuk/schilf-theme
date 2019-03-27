@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var $block \Schilf\Products\Block\Product\Book
+ */
+$book = $block->getBook();
+
+$image = 'category_page_grid-2';
+$imageHelper = $this->helper('\Magento\Catalog\Helper\Image');
+?>
+
+<?php if($book): ?>
+  <div class="book-reference">
+    <p class="book-reference_title">
+      <span></span>
+      <?= __('Auch als Buch') ?>
+    </p>
+    <!--  image goes here-->
+    <div class="book_image">
+      <?php $imageUrl = $resizedImageUrl = $imageHelper->init($book, $image)->getUrl(); ?>
+      <img src="<?= $imageUrl; ?>" alt="Buch">
+    </div>
+    <!--  book info-->
+    <p class="book_author"><?= $block->getBookAuthor() ?></p>
+    <p class="book_info"><span
+        class="book_title"></span><?= $block->getBookTitle() ?><span class="book_year"><?= $block->getReleaseYear() ?></span></p>
+  </div>
+<?php endif; ?>

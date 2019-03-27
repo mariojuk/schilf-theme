@@ -1,0 +1,39 @@
+<?php
+use  \Magento\ConfigurableProduct\Model\Product\Type\Configurable;
+/**
+ * @var $block Magento\Catalog\Block\Product\View
+ * @var $childBlock \Schilf\Products\Block\Product\Configurable\Renderer
+ */
+$product = $block->getProduct();
+
+$children = [];
+foreach ($block->getChildNames() as $childName) {
+    $childBlock = $block->getChildBlock($childName);
+    $children[] = $childBlock;
+}
+?>
+<?php if($product->getTypeId() == Configurable::TYPE_CODE): ?>
+    <div class="product-details-variations">
+        <p class="product-format">Wählen Sie Ihr Wunschformat:</p>
+        <!-- render tabs -->
+        <div class="tabs">
+            <?php foreach($children as $childBlock): ?>
+                <?php $simpleProduct = $childBlock->getProductVariation() ?>
+                <?php if($simpleProduct): ?>
+                    <div class="tab">
+                        <a href="#product-tab-<?= $childBlock->getVariationCode() ?>"
+                           class="tab-link <?= $childBlock->getVariationCode() ?>"
+                           role="presentation"><?= $childBlock->getLabel() ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+        <!--  tab content -->
+        <div id="tabs_content" class="full-width">
+        <?php foreach($children as $childBlock): ?>
+            <?= $childBlock->toHtml() ?>
+        <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,48 @@
+<?php
+/**
+ * @var $block Magento\Catalog\Block\Product\View
+ * @var $product \Magento\Catalog\Model\Product
+ * @var $bookBlock \Schilf\Products\Block\Product\Book
+ */
+$product = $this->getSimpleProduct();
+
+$certicificate  = '';
+$quoteText      = '';
+$referentNumber = '';
+$bookNumber     = '';
+$show = false;
+if ($product) {
+  $show = true;
+  $certicificate  = $product->getData('schilf_certificate');
+  $quoteText      = $product->getData('schilf_quote');
+  $referentNumber = $product->getAttributeText('schilf_referent');
+  $bookNumber     = $product->getData('schilf_buchverweis');
+}
+?>
+<?php if($show): ?>
+<div class="product-details-bottom">
+  <?php if($certicificate): ?>
+    <div class="certificate">
+      <p class="certificate_title"><?= __('Teilnehmer-Zertifikat') ?></p>
+      <!--    image goes here -->
+      <p><?= __('Für jedes Seminar erhalten Sie ein Teilnehmerzertifikat von uns') ?></p>
+    </div>
+  <?php endif; ?>
+  <?php if($quoteText): ?>
+    <div class="quote">
+      <!--    image goes here -->
+      <p class="quote_text"><?= __($quoteText) ?></p>
+    </div>
+  <?php endif; ?>
+  <?php if($referentNumber): ?>
+    <?php if($referentBlock = $block->getChildBlock('product.referent')): ?>
+    <?= $referentBlock->setReferentNumber($referentNumber)->toHtml() ?>
+    <?php endif; ?>
+  <?php endif; ?>
+  <?php if($bookNumber): ?>
+    <?php if($bookBlock = $block->getChildBlock('product.book_reference')): ?>
+      <?= $bookBlock->setBookIsbn($bookNumber)->toHtml() ?>
+    <?php endif; ?>
+  <?php endif; ?>
+</div>
+<?php endif; ?>

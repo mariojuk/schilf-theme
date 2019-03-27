@@ -1,0 +1,42 @@
+<?php
+/**
+ * @var $block Magento\Catalog\Block\Product\View
+ * @var $product \Magento\Catalog\Model\Product
+ */
+$product = $this->getSimpleProduct();
+
+$date = '';
+$time = '';
+$referentNumber       = '';
+if ($product) {
+  $schilf_seminartermin = $product->getData('schilf_seminartermin');
+  $referentNumber       = $product->getAttributeText('schilf_referent');
+
+  if ($schilf_seminartermin) {
+    $date = $block->formatDate($schilf_seminartermin, 1);
+    $time = date('h.i', strtotime($schilf_seminartermin)) . ' ' . __('Uhr');
+  }
+}
+?>
+<?php if($schilf_seminartermin || $referentNumber): ?>
+<div class="seminar_termin">
+  <?php if($referentNumber): ?>
+  <p>
+    <span><?= __('Referent:') ?></span><?= $block
+      ->getChildBlock('product.referent')->setReferentNumber($referentNumber)->getReferentFullName() ?>
+  </p>
+  <?php endif; ?>
+  <?php if($date): ?>
+    <p>
+      <span><?= __('Datum:') ?></span><?= $date ?>
+    </p>
+  <?php endif; ?>
+  <?php if($time): ?>
+    <p>
+      <span><?= __('Uhrzeit:') ?></span><?= $time ?>
+    </p>
+  <?php endif; ?>
+</div>
+<?php endif; ?>
+
+

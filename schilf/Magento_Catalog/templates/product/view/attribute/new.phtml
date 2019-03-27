@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * @var $block Magento\Catalog\Block\Product\View
+ */
+
+$isNewTextValue = strtolower($block->getProduct()->getAttributeText('is_new'));
+?>
+<?php if($isNewTextValue === 'yes'): ?>
+  <div class="product-item-top"><span class="product-item-label">NEU!</span><span
+<?php endif; ?>

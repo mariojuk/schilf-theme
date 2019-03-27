@@ -1,0 +1,30 @@
+<?php
+/**
+ * @var $block Magento\Framework\View\Element\Template
+ * @var $product \Magento\Catalog\Model\Product
+ */
+?>
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+$_code = $block->getAtCode();
+$_attributeType = $block->getAtType();
+$class = $block->getClass();
+//if ($_attributeLabel == 'none') {
+//  $renderLabel = false;
+//}
+
+$_attributeValue = '';
+if ($_product) {
+  if ($_attributeType && $_attributeType == 'text') {
+    $_attributeValue = ($_helper->productAttribute($_product, $_product->getData($_code), $_code)) ? $_product->getAttributeText($_code) : '';
+  } else {
+    $_attributeValue = $_helper->productAttribute($_product, $_product->getData($_code), $_code);
+  }
+}
+?>
+<?php if ($_attributeValue): ?>
+  <div class="attribute <?php if($class): ?><?= $class ?><?php endif; ?>">
+    <div class="value"><?= $_attributeValue ?></div>
+  </div>
+<?php endif; ?>

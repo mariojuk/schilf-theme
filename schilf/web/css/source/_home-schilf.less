@@ -1,0 +1,979 @@
+//
+// Common
+// ___________________________________
+& when (@media-common = true) {
+    body {
+        overflow-x: hidden;
+    }
+    .cms-index-index {
+        .product-item {
+            margin-bottom: 50px;
+        }
+    }
+    .full-width {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        background: @light-grey-two;
+    }
+    .owl-carousel {
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+    .insert-slider {
+        margin-bottom: 20px;
+    }
+    .owl-stage {
+        .item {
+            padding: 30px 0;
+            .slider-link {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-prefix-flex-direction(row);
+                text-decoration: none !important;
+                color: #222 !important;
+            }
+            .owl-lazy {
+                opacity: 1 !important;
+                max-width: 480px;
+                height: 305px;
+            }
+            .slider-content {
+                position: relative;
+                padding-left: 30px;
+                .slider-label {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    background: @orange;
+                    width: 72px;
+                    text-align: center;
+                    border-radius: 50%;
+                    color: #fff;
+                    font: bold 18px/72px 'Roboto';
+                }
+                .slider-cat {
+                    float: right;
+                    font: 20px/24px 'Roboto';
+                    color: @light-olive-green;
+                }
+                .slider-title {
+                    max-width: 90%;
+                    margin: 0;
+                    font: 40px/50px Georgia;
+                }
+                .slider-desc {
+                    font: 18px/30px Georgia;
+                }
+                .slider-btn {
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    .owl-nav {
+        display: block;
+        .owl-prev, .owl-next {
+            position: absolute;
+            top: 50%;
+            z-index: 1;
+            width: 30px;
+            height: 50px;
+            padding: 0;
+            background: url("@{baseDir}images/slider-arrow.svg") no-repeat;
+        }
+        .owl-prev {
+            left: -30px;
+            transform: rotate(180deg);
+        }
+        .owl-next {
+            right: -30px;
+        }
+    }
+
+    .sidebar {
+        display: block;
+        position: relative;
+        padding-bottom: 14px;
+        background: #fff;
+        ul {
+            list-style: none;
+            padding: 0 26px;
+            li {
+                .lib-vendor-prefix-display(flex);
+                margin-bottom: 20px;
+                line-height: 1.67;
+                font-size: 16px;
+            }
+        }
+        .fa-check {
+            font-size: 20px;
+            line-height: normal;
+            color: @light-olive-green;
+            margin-right: 19px;
+            margin-top: 3px;
+        }
+    }
+
+    .sidebar-title {
+        background-color: @light-grey;
+        padding: 12px 0 12px 25px;
+        font-family: Roboto,sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 2.28;
+        color: #000;
+        margin: 0 0 20px;
+    }
+
+    // Tabs
+    #tabs {
+        .ui-tabs-nav {
+            list-style: none;
+            .lib-vendor-prefix-display(flex);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            p, li {
+                .lib-vendor-prefix-display(flex);
+                .flex-align-items-center();
+                .flex-justify-content-center();
+                width: 20%;
+                background-color: @light-grey-two;
+                border: 4px solid @white;
+                border-bottom: none;
+                outline: none;
+                cursor: pointer;
+                transition: 0.3s;
+                font-family: 'Roboto', sans-serif;
+                font-size: 19px;
+                font-weight: 700;
+                line-height: 1.3;
+                text-align: center;
+                margin: 10px 0 0;
+
+                &:first-child{
+                    border-left-color: @light-grey-two;
+                }
+                &:last-child{
+                    border-right-color: @light-grey-two;
+                }
+                &:hover{
+                    position: relative;
+                    z-index: 2;
+                    background-color: @white;
+                    border-left-color: @white;
+                    border-right-color: @white;
+                    -webkit-box-shadow: 0 0 10px 2px rgba(196, 192, 192, 0.5);
+                    -moz-box-shadow: 0 0 10px 2px rgba(196, 192, 192, 0.5);
+                    box-shadow: 0 0 10px 2px rgba(196, 192, 192, 0.5);
+                }
+
+                a {
+                    padding: 10px 5px;
+                    width: 100%;
+                    display: block;
+                    color: @anchor-blue;
+                    text-decoration: none;
+                    &:focus {
+                        font-weight: inherit;
+                    }
+                }
+
+            }
+            .ui-tabs-active {
+                position: relative;
+                z-index: 2;
+                background-color: @white;
+                border-left-color: @white;
+                border-right-color: @white;
+                -webkit-box-shadow: 0 0 19px 2px rgba(196, 192, 192, 0.5);
+                -moz-box-shadow: 0 0 19px 2px rgba(196, 192, 192, 0.5);
+                box-shadow: 0 5px 19px 2px  rgba(196, 192, 192, 0.5);
+                &:after{
+                    background-color: #fff;
+                    height: 20px;
+                    content: "";
+                    position: absolute;
+                    bottom: -20px;
+                    left: -20px;
+                    right: -20px;
+                }
+            }
+        }
+    }
+    .line {
+        width: 100vw;
+        height: 20px;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        box-shadow: 0 -5px 5px -5px rgba(196, 192, 192, 0.5);
+    }
+    .zu-referenten-span {
+        margin-right: 5px;
+    }
+    .zu-referenten-img {
+        width: 25px;
+        height: 25px;
+        margin-left: 5px;
+    }
+    .referenten-content {
+        .lib-vendor-prefix-display(flex);
+        .flex-space-between();
+
+        .referenten-single-details{
+            .lib-vendor-prefix-display(flex);
+            .flex-direction-column();
+
+            .referenten-single-title {
+                font-size: 41px;
+                font-weight: normal;
+                line-height: 0.73;
+            }
+            .zu-referenten {
+                .lib-vendor-prefix-display(flex);
+                .flex-align-items-end();
+                height: 45%;
+                .zu-referenten-img {
+                    position: relative;
+                    top: 3px;
+                }
+            }
+        }
+    }
+    .zu-referenten {
+        left: 0;
+        bottom: 0;
+        font-family: Roboto,sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: normal;
+        text-align: center;
+        color: @black;
+    }
+    .zu-referenten,
+    .mehr-erfahren{
+        .lib-vendor-prefix-display(flex);
+        .flex-align-items-center();
+    }
+    .referenten-single-details-uber-uns{
+        .lib-vendor-prefix-display(flex);
+        .flex-direction-column();
+        background-color: #f3f4ee;
+        .flex-align-items(@pos: center);
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        .referenten-single-title-uber-uns{
+            font-family: "Georgia", sans-serif;
+            font-size: 30px;
+            font-weight: normal;
+            line-height: 1.5;
+            text-align: center;
+            color: #000000;
+        }
+        .referenten-single-description-uber-uns{
+            font-family: "Georgia", sans-serif;
+            font-size: 18px;
+            font-weight: normal;
+            line-height: 1.67;
+            text-align: center;
+            color: #000000;
+            width: 28%;
+        }
+        .mehr-erfahren{
+            font-family: Roboto,sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            color: @black;
+        }
+    }
+    .referenten-single-details-schilf-angebote,
+    .referenten-single-details-live-webinare{
+        .lib-vendor-prefix-display(flex);
+        .flex-direction-column();
+        background-color: #f3f4ee;
+
+        .referenten-single-details-schilf-angebote-container,
+        .referenten-single-details-live-webinare-container{
+
+            .kalender-subtitle {
+                font-family: Roboto,sans-serif;
+                font-size: 19px;
+                font-weight: bold;
+                font-style: normal;
+                line-height: 2.63;
+                color: @anchor-blue;
+            }
+            .referenten-single-title-schilf-angebote {
+                font-family: "Georgia", sans-serif;
+                font-size: 39px;
+                font-weight: normal;
+                font-style: normal;
+                line-height: 1.28;
+                color: @black;
+                margin-bottom: 50px;
+            }
+            .kalender-wrapper {
+                margin-bottom: 70px;
+                .kalender-wrapper-title {
+                    font-family: Roboto,sans-serif;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: @black;
+                    margin: 20px 0;
+                    background-color: @light-olive-green-top;
+                }
+                .light-green-background {
+                    background-color: @light-olive-green-top;
+                }
+                .sickly-yellow-background {
+                    background-color: @sickly-yellow;
+                }
+                .greyish-teal-two-background {
+                    background-color: @greyish-teal-two;
+                }
+                .kalender-wrapper-details {
+                    margin-bottom: 10px;
+                    .kalender-wrapper-details-item {
+                        .lib-vendor-prefix-display(flex);
+                        .flex-space-between();
+
+                        .kalender-wrapper-details-title {
+                            font-family: Roboto,sans-serif;
+                            font-size: 16px;
+                            font-weight: bold;
+                            line-height: normal;
+                            color: @anchor-blue;
+                            background-color: @light-grey;
+                            margin: 7px 0;
+                            .flex-align-items-center();
+                            .lib-vendor-prefix-display(flex);
+                            .flex-wrap();
+
+                            .kalender-wrapper-details-subtitle {
+                                font-weight: normal;
+                                color: @black;
+                                margin: 0;
+                            }
+                        }
+                        .zum-seminar {
+                            .lib-vendor-prefix-display(flex);
+                            .flex-align-items-center();
+                            .flex-justify-content-center();
+                            font-family: Roboto,sans-serif;
+                            font-size: 17px;
+                            font-weight: 700;
+                            text-align: center;
+                            background-color: @orangey-yellow;
+                            cursor: pointer;
+                            transition: 0.6s;
+                            .color-black {
+                                color: @black;
+                            }
+                        }
+
+                        .light-grey-background-button {
+                            background-color: @light-grey;
+
+                            &:hover {
+                                background-color: @light-grey;
+                            }
+                        }
+                    }
+                }
+            }
+            .mehr-erfahren {
+                font-family: Roboto,sans-serif;
+                font-size: 17px;
+                font-weight: 700;
+                line-height: normal;
+                text-align: center;
+                color: @black;
+            }
+        }
+    }
+    .referenten-single-details-schilf-angebote{
+        .kalender-wrapper-details-title {
+            width: 80%;
+        }
+        .zum-seminar {
+            width: 20%;
+            margin: 7px 0 7px 15px;
+        }
+    }
+
+    .angebote-title {
+        max-width: 550px;
+        font-family: Georgia;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.12;
+        letter-spacing: normal;
+        color: #000000;
+    }
+    .referenten-single-description,
+    .angebote-description{
+        font-family: Georgia;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.67;
+        color: @black;
+    }
+
+    //Floating contact button
+    .floating-kontakt-wrapper {
+        position: fixed;
+        z-index: 2;
+        top: 310px;
+        width: 60px;
+        height: 60px;
+
+        #new-contact {
+            width: 60px;
+            height: 60px;
+            float: right;
+            cursor: pointer;
+        }
+        #add-contact-modal {
+            position: absolute;
+            right: 73px;
+            width: 246px;
+            background-color: @anchor-blue;
+            margin-top: -126px;
+
+            .arrow-right {
+                position: absolute;
+                width: 0;
+                height: 0;
+                right: -12px;
+                top: 140px;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-left: 15px solid @anchor-blue;
+            }
+            .floating-kontakt-div {
+                padding: 10px;
+                .floating-kontakt-div-title {
+                    font-family: Roboto,sans-serif;
+                    font-size: 19px;
+                    font-weight: bold;
+                    line-height: normal;
+                    color: @white;
+                }
+
+                .floating-kontakt-div-subtitle {
+                    font-family: Roboto,sans-serif;
+                    font-size: 12px;
+                    font-weight: 300 ;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 0.8;
+                    color: @white;
+                    opacity: 0.8;
+
+                }
+                .opacity-1-floating-data {
+                    font-weight: bold !important;
+                }
+                img {
+                    height: 161px;
+                    margin-bottom: 8px;
+                }
+                .floating-kontakt-div-data,
+                .floating-kontakt-div-subtitle,
+                .close-floating-div {
+                    .lib-vendor-prefix-display(flex);
+                }
+                .close-floating-div {
+                    float: right;
+                    cursor: pointer;
+                    .margin-bottom-0 {
+                        margin-right: 5px;
+                    }
+                }
+                .floating-kontakt-div-subtitle {
+                    margin-right: 15px;
+                }
+                .mail-floating {
+                    margin-right: 33px;
+                }
+            }
+        }
+    }
+}
+
+
+
+//
+// Desktop
+// ___________________________________
+@media only screen and (min-width: 1025px) { // min 1024
+    .cms-index-index {
+        .product-item {
+            &:nth-of-type(2) {
+                .sidebar {
+                    order: -1;
+                }
+            }
+        }
+    }
+    .seminar-anzeigen.mobile-button.show-on-mobile-and-tablet {
+         display: none;
+     }
+    .seminar-anzeigen.show-on-desktop {
+        display: block;
+    }
+    .front-page-seminar-item-details-description, .main-content {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-box-align(flex-start);
+    }
+    .front-page-seminar-item-details-description-paragraph-button, .main-with-sidebar {
+        width: 58%;
+    }
+    .margin-left-two-percent {
+        margin-left: 2%;
+    }
+    .front-page-seminar-item-details-description-checkmarks, .sidebar-right {
+        margin-left: 2%;
+        width: 40%;
+    }
+    .front-page-seminar-item-header-title-right {
+        font-size: 18px;
+        margin-top: 16px;
+    }
+    #element {
+        display: none;
+    }
+    .angebote-title {
+        font-size: 41px;
+    }
+    .referenten-content {
+        margin: 30px 0 95px;
+        .referenten-single-details{
+            width: 47%;
+        }
+        .referenten-single-image{
+            width: 41%;
+            .referenten-image{
+                width: 510px;
+            }
+        }
+    }
+    .referenten-single-details-schilf-angebote,
+    .referenten-single-details-live-webinare{
+        .flex-align-items(@pos: center);
+       width: 100vw;
+       position: relative;
+       left: 50%;
+       right: 50%;
+       margin: 0 -50vw;
+        .referenten-single-details-schilf-angebote-container,
+        .referenten-single-details-live-webinare-container {
+            padding: 0 30px;
+            margin: 0 auto 52px;
+            width: 100%;
+            max-width: 1230px;
+            box-sizing: border-box;
+            .kalender-subtitle {
+                margin:40px 0 10px;
+            }
+        }
+   }
+    .kalender-wrapper-details-title {
+        padding: 13px 20px;
+    }
+
+    .kalender-wrapper-title {
+        padding: 10px 20px;
+    }
+}
+
+
+//
+// Tablet / Desktop
+// ___________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { // min 768
+    .front-page-seminar-item-details-description-checkmarks-paragraph,
+    .front-page-seminar-item-details-description-paragraph {
+        line-height: 1.67;
+        font-size: 18px;
+    }
+    .front-page-seminar-item-details-title {
+        line-height: 1.37;
+        font-size: 30px;
+    }
+    .front-page-seminar-item-header-title-right {
+        margin-top: 20px;
+    }
+    .floating-kontakt-wrapper {
+        right: 100px;
+    }
+}
+
+//
+// Tablet / Mobile
+// ___________________________________
+@media only screen and (max-width: 1025px) {
+    .owl-stage {
+        .item {
+            padding: 0;
+            .slider-link {
+                .lib-vendor-prefix-flex-direction(column);
+            }
+            .owl-lazy {
+                max-width: 100%;
+                height: 210px;
+                object-fit: cover;
+            }
+            .slider-content {
+                padding: 45px 60px;
+                margin-bottom: 80px;
+                .slider-label {
+                }
+                .slider-title {
+                    font: 36px/50px Georgia;
+                }
+                .slider-btn {
+                    width: auto;
+                    min-width: 200px;
+                }
+            }
+        }
+    }
+    .owl-nav {
+        .owl-prev {
+            left: 0;
+        }
+        .owl-next {
+            right: 0;
+        }
+    }
+    #element{
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+
+        .mobile-tab.active {
+            .tab-title {
+                &:after {
+                    content: '-';
+                    margin: -10px 26px 0 0px;
+                    float: right;
+                    font-size: 24px;
+                }
+            }
+        }
+        .mobile-tab {
+            height: 44px;
+            background-color: @light-grey-two;
+            margin-bottom: 3px;
+
+            .tab-title {
+                font-family: Roboto;
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 2.75;
+                color: @deep-teal;
+                margin-left: 12px;
+                &:after{
+                    content: '+';
+                    margin: 2px 25px 0 5px;
+                    float: right;
+                }
+            }
+
+            p.tab-title {
+                a {
+                    text-decoration: none;
+                    &:focus, &:hover {
+                        color: inherit;
+                    }
+                }
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        .referenten-single-details,
+        .angebote-content {
+            margin: 0 12px;
+        }
+
+        .referenten-single-details-schilf-angebote,
+        .referenten-single-details-live-webinare {
+            border-bottom: 3px solid white;
+            width: 100%;
+            .referenten-single-details-schilf-angebote-container,
+            .referenten-single-details-live-webinare-container{
+                margin: 0 12px 30px;
+            }
+        }
+        .angebote-title,
+        .referenten-single-title,
+        .referenten-single-title-schilf-angebote{
+            font-size: 34px;
+        }
+
+        .angebote-title,
+        .referenten-single-title {
+            margin-top: 27px;
+        }
+
+        .angebote-content {
+            .zu-referenten {
+                margin: 2rem 0;
+            }
+        }
+
+        .referenten-content {
+            .flex-direction-column();
+            width: 100%;
+            .referenten-single-details {
+                .flex-order(2);
+                .zu-referenten {
+                    margin: 14px 0 30px;
+                }
+            }
+            .referenten-image {
+                width: 100vw;
+            }
+        }
+        .kalender-wrapper-title,
+        .kalender-wrapper-details-title {
+            padding: 13px 10px;
+        }
+        .kalender-subtitle {
+            margin: 8px 0 10px;
+        }
+    }
+    #tabs {
+        display: none;
+    }
+    .hide-on-mobile {
+        display: none !important;
+    }
+    .products-list {
+        margin: 30px 40px;
+        .product-item {
+            margin-bottom: 60px;
+            .product-item-name {
+                margin: 20px 0 0;
+                padding: 20px 0;
+                font: 26px/40px Georgia;
+            }
+        }
+    }
+
+    .product-item-inner {
+        > div:last-of-type {
+            text-align: center;
+        }
+        .product-item-description {
+            font: 16px/30px Georgia;
+        }
+    }
+
+    .sidebar {
+        margin-bottom: 40px;
+        ul li {
+            margin-bottom: 0;
+            line-height: 30px;
+        }
+    }
+
+    .sidebar-title {
+        padding: 7px 25px;
+    }
+
+    .product-item-info .product-item-top {
+        .product-item-label {
+            width: 40px;
+            line-height: 40px;
+        }
+        .product-item-thema {
+            font: 26px Georgia;
+        }
+
+        .product-item-category {
+            font: 500 16px/40px Roboto;
+        }
+    }
+
+    .seminar-anzeigen.show-on-desktop {
+        display: none;
+    }
+    .front-page-seminar-item-header-title-right {
+        font-size: 14px;
+        width: 80%;
+    }
+    .seminar-anzeigen.mobile-button.show-on-mobile-and-tablet {
+        position: relative;
+        margin: 20px auto auto;
+        display: block;
+        left: 0;
+        bottom: 0;
+        max-width: 260px;
+        font-family: Roboto,sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        text-align: center;
+        padding: 14px 0;
+        background-color: @orangey-yellow;
+        cursor: pointer;
+        -webkit-transition: .6s;
+        -o-transition: .6s;
+        transition: .6s;
+        a{
+            color: @black;
+        }
+    }
+
+    .catalogsearch-result-index .hide-on-desktop,
+    .product-item-description > .action.primary.more {
+        display: none;
+    }
+    .zum-seminar {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .owl-stage {
+        .item {
+            .slider-content {
+                position: relative;
+                padding: 30px 15px 40px;
+                margin-bottom: 40px;
+                .slider-label {
+                    position: absolute;
+                    right: 15px;
+                    top: -36px;
+                }
+                .slider-title {
+                    margin-top: 5px;
+                    font: 25px/34px Georgia;
+                }
+                .slider-desc {
+                    font: 14px/20px Georgia;
+                }
+                .slider-btn {
+                    line-height: 4rem;
+                    width: auto;
+                    min-width: 200px;
+                }
+                .slider-cat {
+                    display: none;
+                }
+            }
+            .owl-lazy {
+                height: 240px;
+            }
+        }
+    }
+    .owl-nav {
+        display: none;
+    }
+    .product-item-info .product-item-top {
+        position: relative;
+        .product-item-thema {
+            display: block;
+            margin-top: 10px;
+            font: 25px Georgia;
+        }
+        .product-item-category {
+            top: 4px;
+            position: absolute;
+            right: 0;
+        }
+    }
+    .product-item-inner .product-item-description {
+        font: 14px/25px Georgia;
+    }
+    .products-list .product .product-item-name {
+        margin: 10px 0 0;
+        padding: 10px 0;
+        font: 25px/40px Georgia;
+    }
+    .main-with-sidebar {
+        p {
+            font: 14px/1.67 Georgia;
+        }
+    }
+    .sidebar {
+        .sidebar-title {
+            padding: 7px 15px;
+        }
+        ul {
+            padding: 0 10px;
+            li {
+                margin-bottom: 0;
+                line-height: 1.67;
+                font-size: 14px;
+            }
+        }
+        .fa-check {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+    }
+    .primary.more {
+        line-height: 4rem;
+    }
+    .floating-kontakt-wrapper {
+        right: 0;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .referenten-single-details-live-webinare {
+        .kalender-wrapper-details-title{
+            width: 52%;
+        }
+        .zum-seminar {
+            width: 22%;
+            margin: 7px 0 7px 15px;
+        }
+        .margin-left-0-right-15{
+            margin: 7px 15px 7px 0 !important;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 599px) {
+    .referenten-single-details-live-webinare{
+        .kalender-wrapper-details-item {
+            border-bottom: 1px solid white;
+            .flex-wrap();
+
+            .kalender-wrapper-details-title{
+                width: 64%;
+            }
+            .light-grey-background-button,
+            .zum-seminar {
+                width: 45.7%;
+                margin: 7px 0;
+                padding: 10px 5px;
+            }
+            .margin-left-0-right-15 {
+                width: 24%;
+            }
+        }
+    }
+}
+

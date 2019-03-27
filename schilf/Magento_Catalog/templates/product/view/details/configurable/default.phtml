@@ -1,0 +1,33 @@
+<?php
+/**
+ * @var $block \Schilf\Products\Block\Product\Configurable\Renderer
+ * @var $product \Magento\Catalog\Model\Product
+ */
+$product = $block->getProductVariation();
+?>
+<?php if ($product): ?>
+  <div class="tab_content" id="product-tab-<?= $block->getVariationCode() ?>">
+    <div style="overflow: auto">
+      <div class="title"><?= $block->getLabel() ?><span><?= $block->getSubtitle() ?></span></div>
+      <?php if($product->isSaleable()): ?>
+        <?= $block->getChildHtml('product.addtocart.simple') ?>
+      <?php else: ?>
+        <div class="actions">
+          <button data-productid="<?= $product->getId() ?>"
+            title="<?= __('zur Anfrage') ?>"
+            class="action primary anfrage show-modal">
+            <span><?= __('zur Anfrage') ?></span>
+          </button>
+        </div>
+      <?php endif; ?>
+    </div>
+      <?= $block->getChildHtml('product.description') ?>
+      <?= $block->getChildHtml('product.seminar_termin') ?>
+      <?= $block->getChildHtml('product.addtocart') ?>
+      <?= $block->getChildHtml('product.askmore') ?>
+      <?= $block->getChildHtml('product.tax_text') ?>
+      <?= $block->getChildHtml('product.individual_question') ?>
+      <?= $block->getChildHtml('product.training_text') ?>
+      <?= $block->getChildHtml('product.bottom') ?>
+  </div>
+<?php endif; ?>

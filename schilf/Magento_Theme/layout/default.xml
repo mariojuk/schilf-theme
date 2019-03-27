@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <referenceContainer name="header.container">
+            <referenceBlock name="header.panel.wrapper" remove="true" />
+        </referenceContainer>
+
+        <referenceContainer name="footer_links" remove="true" />
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+
+        <move element="top.search" destination="header-wrapper" before="header-text-schilf"/>
+        <move element="top.links" destination="header-wrapper" after="header-text-schilf"/>
+        <move element="minicart" destination="header-wrapper" after="top.links"/>
+        <move element="form.subscribe" destination="footer" after="footer-social-schilf"/>
+
+        <referenceBlock name="top.links">
+            <!--<referenceBlock name="register-link" remove="true" />-->
+            <!--<referenceBlock name="authorization-link" remove="true" />-->
+            <referenceBlock name="wish-list-link" remove="true" />
+        </referenceBlock>
+
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Cms\Block\Block" name="header-text-schilf" before="top.links">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-text-schilf</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="store.menu">
+          <block class="Magento\Cms\Block\Block" name="nav-schilf" after="-">
+              <arguments>
+                  <argument name="block_id" xsi:type="string">nav-schilf</argument>
+              </arguments>
+          </block>
+        </referenceBlock>
+
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer-schilf" before="footer-social-schilf">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-schilf</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer-social-schilf" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-social-schilf</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="footer-container">
+            <block class="Magento\Cms\Block\Block" name="copyright-schilf">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">copyright-schilf</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

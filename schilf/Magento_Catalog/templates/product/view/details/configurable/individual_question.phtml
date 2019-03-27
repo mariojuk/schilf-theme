@@ -1,0 +1,29 @@
+<?php
+/**
+ * @var $block Magento\Catalog\Block\Product\View
+ * @var $product \Magento\Catalog\Model\Product
+ */
+$product = $this->getProduct();
+?>
+<div class="individual_question">
+    <div>
+      <div class="individual_question_title">
+        <?= __('Fragen Sie Ihr individuelles Schulwebinar an') ?>
+      </div>
+        <img src="<?php echo $this->getViewFileUrl("images/schulwebinar-icon.png"); ?>">
+      <p><?= __(
+          'Unsere Themen bieten wir auch als individuelles Inhouse-Webinar für 
+          Ihr gesamtes Kollegium. Alle Inhalte passen unsere erfahrenen Referenten 
+          auf die Situation an Ihrer Schule an.'
+        ) ?>
+      </p>
+      <div class="actions">
+        <span><?= __('individuelles Schulwebinar') ?></span>
+        <button data-productid="<?= $product->getId() ?>"
+                title="<?= __('anfragen') ?>"
+                class="action primary anfrage show-modal">
+          <span><?= __('anfragen') ?></span>
+        </button>
+      </div>
+    </div>
+</div>

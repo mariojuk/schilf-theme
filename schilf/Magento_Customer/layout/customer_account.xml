@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/>
+        <referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/>
+        <referenceBlock name="customer-account-navigation-billing-agreements-link" remove="true"/>
+        <referenceBlock name="customer-account-navigation-product-reviews-link" remove="true"/>
+        <referenceBlock name="sidebar.main" remove="true"/>
+
+
+
+        <container name="customer.sidebar.wrapper" htmlTag="div" htmlClass="sidebar-wrapper" before="-"></container>
+        <move element="customer.sidebar.wrapper" destination="columns" before="-"/>
+        <move element="div.sidebar.main" destination="customer.sidebar.wrapper" before="-"/>
+        <move element="div.sidebar.additional" destination="customer.sidebar.wrapper" after="div.sidebar.main"/>
+        <referenceBlock name="div.sidebar.additional" remove="true"/>
+    </body>
+</page>

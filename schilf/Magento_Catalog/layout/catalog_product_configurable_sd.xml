@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceBlock name="product.details.variations">
+        <block class="Schilf\Products\Block\Product\Configurable\Renderer" name="product.details.variation.sd"
+               template="Magento_Catalog::product/view/details/configurable/default.phtml" after="-">
+          <arguments>
+            <argument name="variation_code" xsi:type="string">sd</argument>
+            <argument name="label" xsi:type="string" translate="true">andere Formate</argument>
+            <!--<argument name="subtitle" xsi:type="string" translate="true">Weiterbildung auf moderne Art</argument>-->
+          </arguments>
+          <block class="Schilf\Products\Block\Product\Configurable\AddToCart"
+                 name="product.details.variation.sd.addtocart.simple"
+                 template="Magento_Catalog::product/view/details/configurable/addtocart_simple.phtml"
+                 as="product.addtocart.simple"/>
+          <block class="Magento\Framework\View\Element\Template" name="product.details.variation.sd.description"
+                 template="Magento_Catalog::product/view/details/configurable/parts/sd/description.phtml" as="product.description">
+            <arguments>
+              <argument name="title" xsi:type="string" translate="true">Unsere Angebote zu jedem Bedürfnis und Budget</argument>
+            </arguments>
+          </block>
+        </block>
+    </referenceBlock>
+  </body>
+</page>

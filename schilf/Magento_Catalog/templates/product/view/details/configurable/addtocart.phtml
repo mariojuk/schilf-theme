@@ -1,0 +1,34 @@
+<?php
+use Magento\Framework\App\Action\Action;
+
+/**
+ * @var $block \Schilf\Products\Block\Product\Configurable\AddToCart
+ * @var $product \Magento\Catalog\Model\Product
+ */
+$product = $this->getSimpleProduct();
+?>
+<?php if ($product && $product->isSaleable()): ?>
+  <div class="seminar_price_container">
+    <div class="seminar_price">
+      <span><?= __('Seminarpreis') ?></span>
+      <span><?= $block->getProductPrice($product) ?></span>
+    </div>
+    <div class="product actions product-item-actions">
+      <div class="actions-primary">
+        <?php $postParams = $block->getAddToCartPostParams($product); ?>
+        <form data-role="tocart-form" data-product-sku="<?= $block->escapeHtml($product->getSku()) ?>"
+              action="<?= /* @NoEscape */
+              $postParams['action'] ?>" method="post">
+          <input type="hidden" name="product" value="<?= $postParams['data']['product'] ?>">
+          <input type="hidden" name="<?= Action::PARAM_NAME_URL_ENCODED ?>">
+          <?= $block->getBlockHtml('formkey') ?>
+          <button type="submit"
+                  title="<?= __('In den Warenkorb') ?>"
+                  class="action tocart primary">
+            <span><?= __('In den Warenkorb') ?></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>

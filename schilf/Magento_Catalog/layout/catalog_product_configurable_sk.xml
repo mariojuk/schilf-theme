@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceBlock name="product.details.variations">
+        <block class="Schilf\Products\Block\Product\Configurable\Renderer" name="product.details.variation.sk"
+               template="Magento_Catalog::product/view/details/configurable/default.phtml">
+          <arguments>
+            <argument name="variation_code" xsi:type="string">sk</argument>
+            <argument name="label" xsi:type="string" translate="true">Schulwebinar</argument>
+            <!--<argument name="subtitle" xsi:type="string" translate="true">Weiterbildung auf moderne Art</argument>-->
+          </arguments>
+
+          <block class="Schilf\Products\Block\Product\Configurable\AddToCart"
+                 name="product.details.variation.sk.addtocart.simple"
+                 template="Magento_Catalog::product/view/details/configurable/addtocart_simple.phtml"
+                 as="product.addtocart.simple"/>
+
+          <block class="Magento\Framework\View\Element\Template" name="product.details.variation.sk.description"
+                 template="Magento_Catalog::product/view/details/configurable/description.phtml" as="product.description">
+            <arguments>
+              <argument name="title" xsi:type="string" translate="true">Schulwebinar-Beschreibung</argument>
+            </arguments>
+            <!--temporary workaround, the w132 is simply appended to the description so this has to be a chilf of the description block-->
+            <block class="Magento\Framework\View\Element\Template"
+                   name="product.details.variation.sk.description.schilf_seminarvorteile"
+                   template="Magento_Catalog::product/view/details/configurable/description/seminar_vorteil.phtml"
+                   as="schilf_seminarvorteile">
+            </block>
+            <!--temporary workaround, the w132 is simply appended to the description so this has to be a chilf of the description block-->
+          </block>
+
+          <block class="Magento\Framework\View\Element\Template" name="product.details.variation.sk.seminar_termin"
+                 template="Magento_Catalog::product/view/details/configurable/seminar_termin.phtml"
+                  as="product.seminar_termin">
+            <block class="Schilf\Products\Block\Product\Referent" name="product.details.variation.sk.seminar_termin.referent"
+                   template="Magento_Catalog::product/view/details/referent.phtml"
+                   as="product.referent"/>
+          </block>
+          <block class="Schilf\Products\Block\Product\Configurable\AddToCart"
+                 name="product.details.variation.sk.addtocart"
+                 template="Magento_Catalog::product/view/details/configurable/addtocart.phtml"
+                 as="product.addtocart"/>
+          <block class="Magento\Catalog\Block\Product\View"
+                 name="product.details.variation.sk.askmore"
+                 template="Magento_Catalog::product/view/details/configurable/askmore.phtml"
+                 as="product.askmore"/>
+          <block class="Magento\Framework\View\Element\Template"
+                 name="product.details.variation.sk.tax_text"
+                 template="Magento_Catalog::product/view/details/configurable/tax_text.phtml"
+                 as="product.tax_text"/>
+          <block class="Magento\Catalog\Block\Product\View"
+                 name="product.details.variation.sk.individual_question"
+                 template="Magento_Catalog::product/view/details/configurable/individual_question.phtml"
+                 as="product.individual_question"/>
+          <block class="Magento\Framework\View\Element\Template"
+                 name="product.details.variation.sk.training_text"
+                 template="Magento_Catalog::product/view/details/configurable/training_text.phtml"
+                 as="product.training_text"/>
+
+          <block class="Magento\Framework\View\Element\Template"
+                 name="product.details.variation.sk.bottom"
+                 template="Magento_Catalog::product/view/details/configurable/bottom.phtml"
+                 as="product.bottom">
+            <block class="Schilf\Products\Block\Product\Referent" name="product.details.variation.sk.referent"
+                   template="Magento_Catalog::product/view/details/referent.phtml"
+                   as="product.referent"/>
+            <block class="Schilf\Products\Block\Product\Book" name="product.details.variation.sk.book_reference"
+                   template="Magento_Catalog::product/view/details/configurable/bottom/book_reference.phtml"
+                   as="product.book_reference"/>
+          </block>
+        </block>
+    </referenceBlock>
+  </body>
+</page>
